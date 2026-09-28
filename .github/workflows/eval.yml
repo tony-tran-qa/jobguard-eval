@@ -1,0 +1,43 @@
+name: JobGuard eval
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:        # run the live eval manually from the Actions tab
+  schedule:
+    - cron: "0 12 * * 1"    # live eval every Monday 12:00 UTC (catches silent model changes)
+
+jobs:
+  unit-tests:
+    name: Unit tests (mocked, free)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: pytest -q
+
+  live-eval:
+    name: Live eval gate (real API)
+    needs: unit-tests
+    # only on manual runs, the weekly schedule, or pushes to main - not on every PR (costs money)
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      # fails the job (exit 1) if recall < 100%, FPR > 0%, or stability < 95%
+      - run: python eval_batch.py --dataset data/golden.jsonl --repeats 3
+      - run: python eval_batch.py --dataset data/holdout.jsonl --repeats 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: results/batch_*

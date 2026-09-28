@@ -1,22 +1,24 @@
-Batch 20260928_143819 | prompt v5 | claude-haiku-4-5-20251001 | holdout | 11 rows x 3 repeats
-ID   EXPECTED R1        R2        R3        STABLE  COMPANY
-H01  APPLY    APPLY     APPLY     APPLY     yes     Kinaxis
-H02  APPLY    APPLY     APPLY     APPLY     yes     D2L
-H03  APPLY    APPLY     APPLY     APPLY     yes     Faire
-H04  APPLY    APPLY     APPLY     APPLY     yes     Miovision
-H05  APPLY    APPLY     APPLY     APPLY     yes     Axonify
-H06  AVOID    AVOID     AVOID     AVOID     yes     Swift Parcel Logistics
-H07  AVOID    AVOID     AVOID     AVOID     yes     Nova Finance Group
-H08  AVOID    AVOID     AVOID     AVOID     yes     Deloitte
-H09  AVOID    AVOID     AVOID     AVOID     yes     BrightPath Tasks
-H10  AVOID    AVOID     AVOID     AVOID     yes     Health Canada Recruitment Unit
-H11  AVOID    AVOID     AVOID     AVOID     yes     Payroll Express Solutions
+Batch 20260928_143943 | prompt v4 | claude-haiku-4-5-20251001 | holdout | 11 rows x 5 repeats
+ID   EXPECTED R1        R2        R3        R4        R5        STABLE  COMPANY
+H01  APPLY    APPLY     APPLY     APPLY     APPLY     APPLY     yes     Kinaxis
+H02  APPLY    APPLY     APPLY     APPLY     APPLY     APPLY     yes     D2L
+H03  APPLY    APPLY     APPLY     APPLY     APPLY     APPLY     yes     Faire
+H04  APPLY    APPLY     APPLY     APPLY     APPLY     APPLY     yes     Miovision
+H05  APPLY    APPLY     APPLY     APPLY     APPLY     APPLY     yes     Axonify
+H06  AVOID    AVOID     AVOID     AVOID     AVOID     AVOID     yes     Swift Parcel Logistics
+H07  AVOID    AVOID     AVOID     AVOID     AVOID     AVOID     yes     Nova Finance Group
+H08  AVOID    AVOID     AVOID     AVOID     AVOID     AVOID     yes     Deloitte
+H09  AVOID    AVOID     AVOID     AVOID     AVOID     AVOID     yes     BrightPath Tasks
+H10  AVOID    AVOID     AVOID     AVOID     AVOID     AVOID     yes     Health Canada Recruitment Unit
+H11  AVOID    AVOID     AVOID     AVOID     AVOID     AVOID     yes     Payroll Express Solutions
 ------------------------------------------------------------------------------
 R1: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
 R2: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
 R3: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
+R4: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
+R5: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
 Stability: 11/11 rows identical across repeats = 100%
-Hallucinated-lookup claims: 1/33 responses (quality check, not a pass criterion)
-Tokens: 28449 in / 11914 out | est. cost $0.088 (33 calls)
+Hallucinated-lookup claims: 5/55 responses (quality check, not a pass criterion)
+Tokens: 44885 in / 19426 out | est. cost $0.142 (55 calls)
 PASS CRITERIA MET: YES  (recall 100% + FPR 0% every repeat, stability >= 95%)
-Saved: results\batch_20260928_143819_v5_holdout.txt/.json
+Saved: results\batch_20260928_143943_v4_holdout.txt/.json

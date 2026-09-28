@@ -44,7 +44,7 @@ That's it. Everything below is reference.
 
 > ⚠ **Keep in sync:** if the prompt or model changes in `App.jsx`, update `classify.py` to match. Otherwise the harness tests an old version of the app.
 >
-> **Current state:** `classify.py` is on prompt **v2**, one rule *ahead* of `App.jsx` (v1), on purpose. It's an experiment being validated by the eval (see Results log). `PROMPT_VERSION` in `classify.py` shows which version is active.
+> **Current state:** `classify.py` is on prompt **v4**, ahead of `App.jsx` (v1) on purpose. v4 passed every eval (see Results log) and is ready to port to the app. `PROMPT_VERSION` in `classify.py` shows which version is active.
 
 ## Files
 
@@ -55,6 +55,12 @@ That's it. Everything below is reference.
 | `run_eval.py` | Runs the whole dataset, prints the PASS/MISS table, and saves the run to `results/` |
 | `results/` | One `run_<date>_<time>.txt` (the table) and `.json` (full model responses) per run, including prompt version and model |
 | `data/golden.jsonl` | The labeled test companies (the ground truth) |
+| `eval_batch.py` | Runs a dataset N times in parallel; scores recall, FPR, precision, stability, lookup claims, tokens and cost; exits non-zero if pass criteria fail (CI gate) |
+| `data/holdout.jsonl` | 11 held-out rows never used while tuning the prompt (generalization check) |
+| `tests/test_eval.py` | 17 mocked unit tests (free) + 1 live eval test (`pytest -m live`) |
+| `pytest.ini` | Registers the `live` marker; plain `pytest` skips live tests |
+| `.github/workflows/eval.yml` | GitHub Actions: unit tests on every push; live eval gate on main, manual runs, and weekly |
+| `.env` | Local API key for unattended runs (git-ignored; delete and rotate the key after use) |
 | `requirements.txt` | Python packages to install |
 | `.gitignore` | Keeps `.venv`, cache files, and keys out of Git |
 
@@ -68,6 +74,11 @@ That's it. Everything below is reference.
 | Vet one company by hand | `python -c "from classify import vet; print(vet('Shopify', 'QA', 'https://shopify.com'))"` |
 | Original one-line full run | `python -c "import json; from classify import vet; [print(r['id'], r['expected'], vet(r['company'], r['role'], r['url'])['recommendation']) for r in map(json.loads, open('data/golden.jsonl', encoding='utf-8'))]"` |
 | Check the key is set (safely) | `$env:ANTHROPIC_API_KEY.Substring(0,10) + "..."` |
+| Batch eval, 3 repeats (golden) | `python eval_batch.py` |
+| Batch eval on held-out set | `python eval_batch.py --dataset data/holdout.jsonl --repeats 3` |
+| Stability run, 5 repeats | `python eval_batch.py --repeats 5` |
+| Unit tests (free, no API) | `pytest` |
+| Live eval test (costs ~5 cents) | `pytest -m live` |
 | Leave the venv | `deactivate` |
 
 Expected smoke-test output: `LOW APPLY - Anthropic is a legitimate...`
@@ -218,9 +229,49 @@ Score, v1 vs. v2 (AVOID = the "scam" class):
 - 007's v2 red flags are softer, but still hint at checks it can't do ("not recognized in public databases"). Worth tightening.
 
 **Next: prompt v3.** Keep the "unknown is not a scam" rule, but define known scam **role patterns** as concrete red flags that require AVOID (money/payment handling, package reshipping, vague data entry, mystery shopper, crypto trading assistant, government impersonation). Then rerun 3 times to measure stability.
+### Pass criteria (fixed before tuning, Sept 28, 2026)
+
+Recall 100% and false-positive rate 0% on **every** repeat, and stability >= 95% (same verdict across repeats), on both the golden set and the held-out set. AVOID is the positive class; CAUTION on a scam row is a miss; CAUTION on a legit row is not a false positive but is reported.
+
+### Tuning cycles (automated with `eval_batch.py`)
+
+| Cycle | Prompt | Change | Golden | Held-out | Lookup claims | Decision |
+|---|---|---|---|---|---|---|
+| 0 | v2 | baseline, 3 repeats | recall 91/82/91%, FPR 0%, stability 95% | - | - | fails (011 always missed, 009 flips) |
+| 1 | v3 | six concrete scam patterns force AVOID; ban database/search claims | recall 100%, FPR 0%, stability 100% (x3) | 100% / 0% / 100% (x3) | 10/93 | pass |
+| 2 | v4 | evidence limited to inputs + own knowledge; prescribed "I do not recognize it" wording | 100% / 0% / 100% (x3) | 100% / 0% / 100% (x3) | 5/93 | pass, kept |
+| 3 | v5 | every red flag must cite a visible input; ban absence-of-records flags | 100% / 0% / **95%** (Intellijoint flipped once) | 100% / 0% / 100% | 4/93 | **rejected**: negligible gain, stability regressed; reverted to v4 |
+| Final | **v4** | confirmation, **5 repeats** each | 100% / 0% / 100% (x5, 100 calls) | 100% / 0% / 100% (x5, 55 calls) | 14/155 (9%) | **PASS** |
+
+Plus: 17 mocked unit tests pass (`pytest`), and the live pytest gate passes (`pytest -m live`, 20 real calls).
+
+Total API cost of all tuning and confirmation runs: about $1.30.
+
+### Known limitations (honest findings)
+
+- **Hallucinated-lookup wording is reduced but not eliminated** (~9% of responses still say things like "no verifiable business registration"). Prompt rules alone can't fully fix it, because the model genuinely has no data to check. The real fix is architectural: give it evidence (web search tool or a domain/WHOIS lookup). Logged as future work.
+- **Small datasets** (20 golden + 11 held-out). Results are strong signals, not statistical proof.
+- **Held-out labels were drafted by Claude**, not yet reviewed by me; review them before quoting held-out numbers externally.
+- **H09 (task scam)** was meant to test a pattern not in any rule, but its `.site` domain also triggers rule 6 (cheap TLD), so it's a partial generalization test only. A cleaner test would be a task scam with no URL.
+- Palitronica (007) returns CAUTION, not APPLY: accepted by design (the model doesn't know it and says so), and it is no longer a false positive.
 **How to read `run_eval.py` output:** each row shows `ID  EXPECTED  ACTUAL  RESULT  COMPANY`. PASS means the model matched my label; MISS means investigate that row. The last line is the overall score.
 ## Roadmap
 
+- **Day 1: done.** Wrapper, smoke test, golden dataset, first full pass.
+- **Day 2: done.** Batch scoring (precision, recall, FPR), 3-5 repeat stability runs, held-out set, pytest suite (17 unit + 1 live).
+- **Day 3: mostly done.** Token and cost logging per batch; GitHub Actions workflow written. **To finish:** create the GitHub repo, `git branch -M main`, push, and add `ANTHROPIC_API_KEY` as a repository secret.
+- **Next:** port prompt v4 to `App.jsx` (needs approval); add a web-search or WHOIS evidence step to remove residual lookup claims; grow both datasets; add task-scam rule after a clean held-out test.
+
+## Interview talking points
+
+1. **Found a false positive through evals, not users:** a real company was flagged AVOID 3/3. Root cause: the model treated missing knowledge as evidence of fraud and fabricated a lookup it can't perform.
+2. **Fixing it caused a regression, and the regression test caught it:** v2 fixed the false positive but dropped recall to 82-91%. v3 fixed both. Classic precision/recall trade-off, measured rather than guessed.
+3. **Measured non-determinism:** one row flipped between runs, so every version was judged on 3-5 repeats, with a stability metric.
+4. **Guarded against overfitting:** pass criteria fixed before tuning, plus a held-out set never used during tuning.
+5. **Rejected a change on evidence:** v5 looked like an improvement but degraded stability, so it was reverted.
+6. **Automated as a CI gate:** mocked unit tests on every push; live eval gate that fails the build if recall, FPR, or stability regress, plus a weekly run to catch silent vendor model changes.
+7. **Cost-aware:** each batch logs tokens and dollars (~## Roadmap
+
 - **Day 1:** wrapper, smoke test, golden dataset, first full pass
 - **Day 2:** pytest suite with precision, recall, and false-positive rate (AVOID = positive class); run each company 5 times to measure verdict stability
-- **Day 3:** GitHub Actions CI gate (fails if recall or stability drops); per-run token cost logging
+- **Day 3:** GitHub Actions CI gate (fails if recall or stability drops); per-run token cost logging.15 per 60-call run on Haiku 4.5).

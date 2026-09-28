@@ -101,6 +101,7 @@ def main():
         "tokens_in": usage_in, "tokens_out": usage_out, "est_cost_usd": cost,
         "responses": {str(k): out[k] for k in range(a.repeats)}}, indent=2), encoding="utf-8")
     print(f"Saved: {base}.txt/.json")
+    raise SystemExit(0 if passed else 1)   # non-zero exit fails a CI job
 
 
 if __name__ == "__main__":
