@@ -13,6 +13,16 @@ import argparse, collections, concurrent.futures as cf, datetime, json, pathlib,
 
 from classify import MODEL, PROMPT_VERSION, vet
 
+import re
+LOOKUP_CLAIM = re.compile(r"search(ed)? results|no (legitimate )?results|returns no|database|registr|directory|no verifiable linkedin|glassdoor|crunchbase|whois", re.I)
+
+
+def lookup_claims(res):
+    """Count phrases implying the model looked something up (it has no internet access)."""
+    text = " ".join([str(res.get("verdict", ""))] + [str(x) for x in res.get("redFlags", [])] + [str(res.get("confidenceNote", ""))])
+    return len(LOOKUP_CLAIM.findall(text))
+
+
 PRICE_IN, PRICE_OUT = 1.0, 5.0   # USD per million tokens, Haiku 4.5 (third-party trackers; not confirmed on Anthropic's page)
 
 
@@ -77,6 +87,8 @@ def main():
         L.append(f"R{k+1}: recall {s['tp']}/{s['tp']+s['fn']} = {s['recall']:.0%} | FPR {s['fp']}/{s['fp']+s['tn']} = {s['fpr']:.0%} | "
                  f"precision {s['precision']:.0%} | legit CAUTION {s['legit_caution']}")
     L.append(f"Stability: {len(stable)}/{len(rows)} rows identical across repeats = {stability:.0%}")
+    lc = sum(1 for k in range(a.repeats) for r in rows if lookup_claims(out[k][r["id"]]))
+    L.append(f"Hallucinated-lookup claims: {lc}/{len(jobs)} responses (quality check, not a pass criterion)")
     L.append(f"Tokens: {usage_in} in / {usage_out} out | est. cost ${cost:.3f} ({len(jobs)} calls)")
     L.append(f"PASS CRITERIA MET: {'YES' if passed else 'NO'}  (recall 100% + FPR 0% every repeat, stability >= 95%)")
     print("\n".join(L))

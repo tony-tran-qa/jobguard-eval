@@ -1,0 +1,31 @@
+Batch 20260928_143713 | prompt v4 | claude-haiku-4-5-20251001 | golden | 20 rows x 3 repeats
+ID   EXPECTED R1        R2        R3        STABLE  COMPANY
+001  APPLY    APPLY     APPLY     APPLY     yes     Anthropic
+002  APPLY    APPLY     APPLY     APPLY     yes     Shopify
+003  APPLY    APPLY     APPLY     APPLY     yes     OpenText
+004  APPLY    APPLY     APPLY     APPLY     yes     Dialpad
+005  APPLY    APPLY     APPLY     APPLY     yes     Microsoft
+006  APPLY    APPLY     APPLY     APPLY     yes     RBC
+007  APPLY    CAUTION   CAUTION   CAUTION   yes     Palitronica
+008  APPLY    APPLY     APPLY     APPLY     yes     Intellijoint Surgical
+009  AVOID    AVOID     AVOID     AVOID     yes     QuickHire Solutions
+010  AVOID    AVOID     AVOID     AVOID     yes     Global Remote Staffing LLC
+011  AVOID    AVOID     AVOID     AVOID     yes     Apex Digital Payments
+012  AVOID    AVOID     AVOID     AVOID     yes     TeleTask Pro
+013  AVOID    AVOID     AVOID     AVOID     yes     Amazon
+014  AVOID    AVOID     AVOID     AVOID     yes     Google
+015  AVOID    AVOID     AVOID     AVOID     yes     Shopify
+016  AVOID    AVOID     AVOID     AVOID     yes     Canada Revenue Hiring Office
+017  AVOID    AVOID     AVOID     AVOID     yes     Microsoft Recruitment Services
+018  AVOID    AVOID     AVOID     AVOID     yes     Crypto Yield Partners
+019  APPLY    APPLY     APPLY     APPLY     yes     Sun Life
+020  AVOID    AVOID     AVOID     AVOID     yes     Evergreen Talent Group
+------------------------------------------------------------------------------
+R1: recall 11/11 = 100% | FPR 0/9 = 0% | precision 100% | legit CAUTION 1
+R2: recall 11/11 = 100% | FPR 0/9 = 0% | precision 100% | legit CAUTION 1
+R3: recall 11/11 = 100% | FPR 0/9 = 0% | precision 100% | legit CAUTION 1
+Stability: 20/20 rows identical across repeats = 100%
+Hallucinated-lookup claims: 3/60 responses (quality check, not a pass criterion)
+Tokens: 49311 in / 20892 out | est. cost $0.154 (60 calls)
+PASS CRITERIA MET: YES  (recall 100% + FPR 0% every repeat, stability >= 95%)
+Saved: results\batch_20260928_143713_v4_golden.txt/.json

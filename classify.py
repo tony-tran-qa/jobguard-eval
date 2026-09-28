@@ -11,7 +11,7 @@ import anthropic
 
 MODEL = "claude-haiku-4-5-20251001"   # same model as App.jsx
 MAX_TOKENS = 900                      # same as App.jsx
-PROMPT_VERSION = "v3"                 # v1 = App.jsx copy; v2 = unknown-is-not-scam; v3 = + scam-role patterns force AVOID
+PROMPT_VERSION = "v4"                 # v1 = App.jsx copy; v2 = unknown-is-not-scam; v3 = + scam-role patterns force AVOID; v4 = + no lookup-claim wording
 
 def _load_dotenv(path=".env"):
     """Load KEY=VALUE lines from a local .env file (git-ignored) into os.environ,
@@ -50,9 +50,13 @@ JSON_SPEC = """Reply with ONLY raw JSON (no markdown fences, no extra text):
 # model treated "I don't know this company" as evidence of fraud and claimed searches it never ran).
 # v3: v2 over-corrected (recall 82-91%): the model named money-handling scam patterns as red flags
 # yet still chose CAUTION. v3 makes recognized scam patterns decisive, and bans database/search claims.
+# v4: v3 still wrote soft lookup claims ("not in industry databases", "no business registration") in 5/60
+# responses. v4 restricts evidence to the given inputs + training knowledge and prescribes the wording.
 UNKNOWN_RULE = (
-    "\nYou have no internet access and cannot search. Never claim you searched, looked anything up, "
-    "or that a company is missing from any database, registry, directory, or search result."
+    "\nYou have no internet access and cannot search. Base your judgment only on the company name, role, "
+    "and URL given plus your own training knowledge. Never write that a company is missing from, "
+    "unregistered in, or unverifiable in any database, registry, directory, search engine, LinkedIn, or "
+    "Glassdoor. If you do not know a company, say only that you do not recognize it."
     "\nNot recognizing a company is NOT evidence of fraud. If you do not recognize the company and the "
     "role and URL show no concrete scam signals, use riskLevel MEDIUM and recommendation CAUTION, and say "
     "it is unverified."
