@@ -59,7 +59,7 @@ That's it. Everything below is reference.
 | `data/holdout.jsonl` | 11 held-out rows never used while tuning the prompt (generalization check) |
 | `tests/test_eval.py` | 17 mocked unit tests (free) + 1 live eval test (`pytest -m live`) |
 | `pytest.ini` | Registers the `live` marker; plain `pytest` skips live tests |
-| `.github/workflows/eval.yml` | GitHub Actions: unit tests on every push; live eval gate on main, manual runs, and weekly |
+| `.github/workflows/eval.yml` | GitHub Actions: free unit tests on every push; live eval gate on manual runs and weekly (needs the `ANTHROPIC_API_KEY` repo secret) |
 | `.env` | Local API key for unattended runs (git-ignored; delete and rotate the key after use) |
 | `requirements.txt` | Python packages to install |
 | `.gitignore` | Keeps `.venv`, cache files, and keys out of Git |
@@ -255,12 +255,28 @@ Total API cost of all tuning and confirmation runs: about $1.30.
 - **H09 (task scam)** was meant to test a pattern not in any rule, but its `.site` domain also triggers rule 6 (cheap TLD), so it's a partial generalization test only. A cleaner test would be a task scam with no URL.
 - Palitronica (007) returns CAUTION, not APPLY: accepted by design (the model doesn't know it and says so), and it is no longer a false positive.
 **How to read `run_eval.py` output:** each row shows `ID  EXPECTED  ACTUAL  RESULT  COMPANY`. PASS means the model matched my label; MISS means investigate that row. The last line is the overall score.
+## Design decision: web search deferred (Sept 28, 2026)
+
+**Question:** should the model get a web-search tool so it can verify companies instead of relying on training knowledge?
+
+**Decision: not now.** Revisit as "JobGuard v2."
+
+| Would gain | Would cost |
+|---|---|
+| Removes the residual ~9% hallucinated-lookup wording (the model could actually check) | **Non-reproducible evals:** search results change daily, so verdicts drift. Stable tests would need recorded (cached) search results, a project of its own |
+| Small real companies (e.g. Palitronica) could get APPLY instead of CAUTION | **New attack surface:** fetched web pages can carry prompt-injection text aimed at the model |
+| Real evidence behind every red flag | **Cost and latency:** a per-search charge on top of tokens, plus slower responses |
+| | **App drift:** JobGuard's `App.jsx` would need the same change, or the harness stops testing what users get |
+
+**Why deferred:** the harness already meets every pass criterion (recall 100%, FPR 0%, stability 100% on golden and held-out sets). Web search improves the product, not the evidence the harness provides, and it adds non-determinism and a security risk that would each need their own test design.
+
+**If built later:** record search results per company so evals replay them deterministically; add prompt-injection test rows (pages containing instructions); treat "search unavailable" as a test case; compare cost per correct verdict against v4.
 ## Roadmap
 
 - **Day 1: done.** Wrapper, smoke test, golden dataset, first full pass.
 - **Day 2: done.** Batch scoring (precision, recall, FPR), 3-5 repeat stability runs, held-out set, pytest suite (17 unit + 1 live).
 - **Day 3: mostly done.** Token and cost logging per batch; GitHub Actions workflow written. **To finish:** create the GitHub repo, `git branch -M main`, push, and add `ANTHROPIC_API_KEY` as a repository secret.
-- **Next:** port prompt v4 to `App.jsx` (needs approval); add a web-search or WHOIS evidence step to remove residual lookup claims; grow both datasets; add task-scam rule after a clean held-out test.
+- **Next:** port prompt v4 to `App.jsx` (needs approval); web-search/WHOIS evidence step deferred (see Design decision above); grow both datasets; add task-scam rule after a clean held-out test.
 
 ## Interview talking points
 
@@ -269,8 +285,24 @@ Total API cost of all tuning and confirmation runs: about $1.30.
 3. **Measured non-determinism:** one row flipped between runs, so every version was judged on 3-5 repeats, with a stability metric.
 4. **Guarded against overfitting:** pass criteria fixed before tuning, plus a held-out set never used during tuning.
 5. **Rejected a change on evidence:** v5 looked like an improvement but degraded stability, so it was reverted.
-6. **Automated as a CI gate:** mocked unit tests on every push; live eval gate that fails the build if recall, FPR, or stability regress, plus a weekly run to catch silent vendor model changes.
-7. **Cost-aware:** each batch logs tokens and dollars (~## Roadmap
+6. **Automated as a CI gate:** mocked unit tests on every push; a live eval gate (manual or weekly) that fails the build if recall, FPR, or stability regress. The weekly run catches silent vendor model changes.
+7. **Cost-aware:** each batch logs tokens and dollars (~## Design decision: web search deferred (Sept 28, 2026)
+
+**Question:** should the model get a web-search tool so it can verify companies instead of relying on training knowledge?
+
+**Decision: not now.** Revisit as "JobGuard v2."
+
+| Would gain | Would cost |
+|---|---|
+| Removes the residual ~9% hallucinated-lookup wording (the model could actually check) | **Non-reproducible evals:** search results change daily, so verdicts drift. Stable tests would need recorded (cached) search results, a project of its own |
+| Small real companies (e.g. Palitronica) could get APPLY instead of CAUTION | **New attack surface:** fetched web pages can carry prompt-injection text aimed at the model |
+| Real evidence behind every red flag | **Cost and latency:** a per-search charge on top of tokens, plus slower responses |
+| | **App drift:** JobGuard's `App.jsx` would need the same change, or the harness stops testing what users get |
+
+**Why deferred:** the harness already meets every pass criterion (recall 100%, FPR 0%, stability 100% on golden and held-out sets). Web search improves the product, not the evidence the harness provides, and it adds non-determinism and a security risk that would each need their own test design.
+
+**If built later:** record search results per company so evals replay them deterministically; add prompt-injection test rows (pages containing instructions); treat "search unavailable" as a test case; compare cost per correct verdict against v4.
+## Roadmap
 
 - **Day 1:** wrapper, smoke test, golden dataset, first full pass
 - **Day 2:** pytest suite with precision, recall, and false-positive rate (AVOID = positive class); run each company 5 times to measure verdict stability

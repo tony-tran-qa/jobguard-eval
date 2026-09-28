@@ -22,8 +22,8 @@ jobs:
   live-eval:
     name: Live eval gate (real API)
     needs: unit-tests
-    # only on manual runs, the weekly schedule, or pushes to main - not on every PR (costs money)
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || github.ref == 'refs/heads/main'
+    # only on manual runs (Actions tab > Run workflow) and the weekly schedule - pushes run the free unit tests only
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
