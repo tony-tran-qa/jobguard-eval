@@ -44,7 +44,7 @@ That's it. Everything below is reference.
 
 > ⚠ **Keep in sync:** if the prompt or model changes in `App.jsx`, update `classify.py` to match. Otherwise the harness tests an old version of the app.
 >
-> **Current state:** `classify.py` is on prompt **v4**, ahead of `App.jsx` (v1) on purpose. v4 passed every eval (see Results log) and is ready to port to the app. `PROMPT_VERSION` in `classify.py` shows which version is active.
+> **Current state (Sept 28, 2026):** prompt **v4** is live in both `classify.py` and `App.jsx` (the v4 rule was ported word for word; a v1 backup is at `my-jobguard/src/App.jsx.bak-v1-20260928`). Harness and app are in sync again.
 
 ## Files
 
@@ -276,7 +276,8 @@ Total API cost of all tuning and confirmation runs: about $1.30.
 - **Day 1: done.** Wrapper, smoke test, golden dataset, first full pass.
 - **Day 2: done.** Batch scoring (precision, recall, FPR), 3-5 repeat stability runs, held-out set, pytest suite (17 unit + 1 live).
 - **Day 3: mostly done.** Token and cost logging per batch; GitHub Actions workflow written. **To finish:** create the GitHub repo, `git branch -M main`, push, and add `ANTHROPIC_API_KEY` as a repository secret.
-- **Next:** port prompt v4 to `App.jsx` (needs approval); web-search/WHOIS evidence step deferred (see Design decision above); grow both datasets; add task-scam rule after a clean held-out test.
+- **Done Sept 28:** prompt v4 ported to `App.jsx`; app builds cleanly (`npm run build`).
+- **Next:** web-search/WHOIS evidence step deferred (see Design decision above); grow both datasets; add task-scam rule after a clean held-out test.
 
 ## Interview talking points
 
