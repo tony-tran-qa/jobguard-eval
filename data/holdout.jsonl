@@ -1,0 +1,11 @@
+{"id": "H01", "company": "Kinaxis", "role": "QA Automation Engineer", "url": "https://kinaxis.com", "expected": "APPLY", "note": "known Canadian SaaS, correct domain"}
+{"id": "H02", "company": "D2L", "role": "Software Developer in Test", "url": "https://d2l.com", "expected": "APPLY", "note": "known Kitchener edtech, correct domain"}
+{"id": "H03", "company": "Faire", "role": "SDET", "url": "https://faire.com", "expected": "APPLY", "note": "known marketplace with Waterloo office"}
+{"id": "H04", "company": "Miovision", "role": "QA Analyst", "url": "", "expected": "APPLY", "note": "HARD: real mid-size Kitchener company, no URL"}
+{"id": "H05", "company": "Axonify", "role": "Test Engineer", "url": "", "expected": "APPLY", "note": "HARD: real Waterloo company, no URL"}
+{"id": "H06", "company": "Swift Parcel Logistics", "role": "Home-Based Package Inspector", "url": "", "expected": "AVOID", "note": "reshipping scam, new wording"}
+{"id": "H07", "company": "Nova Finance Group", "role": "Funds Transfer Coordinator", "url": "", "expected": "AVOID", "note": "money-mule scam, new wording"}
+{"id": "H08", "company": "Deloitte", "role": "Remote Data Entry Clerk", "url": "https://deloitte-careers.online", "expected": "AVOID", "note": "HARD: real brand, fake domain"}
+{"id": "H09", "company": "BrightPath Tasks", "role": "App Review Tasker", "url": "https://brightpath-tasks.site", "expected": "AVOID", "note": "HARD: task scam, pattern NOT in any prompt rule (generalization test)"}
+{"id": "H10", "company": "Health Canada Recruitment Unit", "role": "Remote Clerk", "url": "https://canada-gov-jobs.org", "expected": "AVOID", "note": "government impersonation, new wording"}
+{"id": "H11", "company": "Payroll Express Solutions", "role": "Check Deposit Assistant", "url": "", "expected": "AVOID", "note": "check-fraud / money-handling scam"}

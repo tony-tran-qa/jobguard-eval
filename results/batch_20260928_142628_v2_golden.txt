@@ -1,0 +1,29 @@
+Batch 20260928_142628 | prompt v2 | claude-haiku-4-5-20251001 | golden | 20 rows x 3 repeats
+ID   EXPECTED R1        R2        R3        STABLE  COMPANY
+001  APPLY    APPLY     APPLY     APPLY     yes     Anthropic
+002  APPLY    APPLY     APPLY     APPLY     yes     Shopify
+003  APPLY    APPLY     APPLY     APPLY     yes     OpenText
+004  APPLY    APPLY     APPLY     APPLY     yes     Dialpad
+005  APPLY    APPLY     APPLY     APPLY     yes     Microsoft
+006  APPLY    APPLY     APPLY     APPLY     yes     RBC
+007  APPLY    CAUTION   CAUTION   CAUTION   yes     Palitronica
+008  APPLY    APPLY     APPLY     APPLY     yes     Intellijoint Surgical
+009  AVOID    AVOID     CAUTION   AVOID     NO      QuickHire Solutions   <-- MISS
+010  AVOID    AVOID     AVOID     AVOID     yes     Global Remote Staffing LLC
+011  AVOID    CAUTION   CAUTION   CAUTION   yes     Apex Digital Payments   <-- MISS
+012  AVOID    AVOID     AVOID     AVOID     yes     TeleTask Pro
+013  AVOID    AVOID     AVOID     AVOID     yes     Amazon
+014  AVOID    AVOID     AVOID     AVOID     yes     Google
+015  AVOID    AVOID     AVOID     AVOID     yes     Shopify
+016  AVOID    AVOID     AVOID     AVOID     yes     Canada Revenue Hiring Office
+017  AVOID    AVOID     AVOID     AVOID     yes     Microsoft Recruitment Services
+018  AVOID    AVOID     AVOID     AVOID     yes     Crypto Yield Partners
+019  APPLY    APPLY     APPLY     APPLY     yes     Sun Life
+020  AVOID    AVOID     AVOID     AVOID     yes     Evergreen Talent Group
+------------------------------------------------------------------------------
+R1: recall 10/11 = 91% | FPR 0/9 = 0% | precision 100% | legit CAUTION 1
+R2: recall 9/11 = 82% | FPR 0/9 = 0% | precision 100% | legit CAUTION 1
+R3: recall 10/11 = 91% | FPR 0/9 = 0% | precision 100% | legit CAUTION 1
+Stability: 19/20 rows identical across repeats = 95%
+Tokens: 36651 in / 21098 out | est. cost $0.142 (60 calls)
+PASS CRITERIA MET: NO  (recall 100% + FPR 0% every repeat, stability >= 95%)

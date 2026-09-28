@@ -11,7 +11,7 @@ import anthropic
 
 MODEL = "claude-haiku-4-5-20251001"   # same model as App.jsx
 MAX_TOKENS = 900                      # same as App.jsx
-PROMPT_VERSION = "v2"                 # v1 = exact App.jsx copy; v2 = + no-web-access / unknown-is-not-scam rule
+PROMPT_VERSION = "v3"                 # v1 = App.jsx copy; v2 = unknown-is-not-scam; v3 = + scam-role patterns force AVOID
 
 def _load_dotenv(path=".env"):
     """Load KEY=VALUE lines from a local .env file (git-ignored) into os.environ,
@@ -48,14 +48,22 @@ JSON_SPEC = """Reply with ONLY raw JSON (no markdown fences, no extra text):
 
 # v2 rule: added after Run 1 false positive (Palitronica flagged AVOID 3/3 because the
 # model treated "I don't know this company" as evidence of fraud and claimed searches it never ran).
+# v3: v2 over-corrected (recall 82-91%): the model named money-handling scam patterns as red flags
+# yet still chose CAUTION. v3 makes recognized scam patterns decisive, and bans database/search claims.
 UNKNOWN_RULE = (
     "\nYou have no internet access and cannot search. Never claim you searched, looked anything up, "
-    "or found no results."
+    "or that a company is missing from any database, registry, directory, or search result."
     "\nNot recognizing a company is NOT evidence of fraud. If you do not recognize the company and the "
     "role and URL show no concrete scam signals, use riskLevel MEDIUM and recommendation CAUTION, and say "
-    "it is unverified. Use AVOID only when there are concrete red flags in the company name, role, or URL."
+    "it is unverified."
+    "\nThese are concrete scam signals, and any ONE of them requires riskLevel HIGH and recommendation AVOID, "
+    "even if the company is unknown: (1) a role that involves receiving, holding, transferring, or processing "
+    "money, payments, or checks for the employer; (2) receiving and reshipping packages; (3) vague remote "
+    "data-entry or clerical work offered by a generic, unidentifiable company; (4) mystery shopping; "
+    "(5) trading or managing cryptocurrency on someone's behalf; (6) impersonating a government agency or a "
+    "well-known brand, including a lookalike, typosquatted, cheap-TLD, or free-hosting domain."
+    "\nIf you list a red flag that matches one of these signals, your recommendation must be AVOID, not CAUTION."
 )
-
 
 def build_prompt(company: str, role: str = "", url: str = "") -> str:
     url_context = f'\nHomepage URL: "{url}"' if url else ""
@@ -85,7 +93,9 @@ def vet(company: str, role: str = "", url: str = "") -> dict:
     match = re.search(r"\{[\s\S]*\}", raw)
     if not match:
         raise ValueError(f"No JSON in response: {raw[:200]}")
-    return json.loads(match.group(0))
+    result = json.loads(match.group(0))
+    result["_usage"] = {"input_tokens": resp.usage.input_tokens, "output_tokens": resp.usage.output_tokens}
+    return result
 
 
 if __name__ == "__main__":

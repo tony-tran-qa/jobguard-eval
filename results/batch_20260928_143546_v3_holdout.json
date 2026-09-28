@@ -1,0 +1,946 @@
+{
+  "stamp": "20260928_143546",
+  "prompt_version": "v3",
+  "model": "claude-haiku-4-5-20251001",
+  "dataset": "data/holdout.jsonl",
+  "repeats": 3,
+  "per_repeat": [
+    {
+      "tp": 6,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "legit_caution": 0
+    },
+    {
+      "tp": 6,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "legit_caution": 0
+    },
+    {
+      "tp": 6,
+      "fn": 0,
+      "fp": 0,
+      "tn": 5,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "precision": 1.0,
+      "legit_caution": 0
+    }
+  ],
+  "stability": 1.0,
+  "passed": true,
+  "tokens_in": 25380,
+  "tokens_out": 11757,
+  "est_cost_usd": 0.084165,
+  "responses": {
+    "0": {
+      "H01": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Kinaxis is a legitimate, publicly-traded Canadian software company with a strong market presence in supply chain planning; QA Automation Engineer is a standard technical role with no scam indicators.",
+        "redFlags": [],
+        "greenFlags": [
+          "Kinaxis is a well-established public company (TSX: KXS) founded in 1984 with strong brand recognition in enterprise software",
+          "QA Automation Engineer is a legitimate, standard technical role aligned with core business operations",
+          "Official .com domain (kinaxis.com) matches known company identity with no typosquatting or suspicious hosting"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on Kinaxis's official careers page (careers.kinaxis.com or similar)",
+          "Confirm recruiter details match official Kinaxis HR contacts via the main website",
+          "Review Kinaxis's public financial statements and market presence (TSX listing, Gartner recognition in supply chain software)"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "1001-5000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "1984",
+        "headquarters": "Ottawa, Canada",
+        "confidenceNote": "Well-known public company with transparent financial reporting and established market reputation \u2014 data reliable.",
+        "_usage": {
+          "input_tokens": 796,
+          "output_tokens": 358
+        }
+      },
+      "H02": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "D2L is a legitimate, well-established Canadian software company offering a genuine Software Developer in Test role.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established public/major private company in education technology with strong market presence",
+          "Domain d2l.com is official, professionally maintained, and matches known company branding",
+          "Software Developer in Test is a standard, legitimate technical role with clear industry purpose"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on D2L's official careers page at d2l.com/careers",
+          "Check D2L's LinkedIn company profile for employee count, reviews, and recent hiring activity",
+          "Confirm recruiter identity by cross-referencing email domain against d2l.com and LinkedIn staff roster"
+        ],
+        "companyType": "Software / SaaS (Learning Management System)",
+        "ownership": "Private",
+        "headcount": "1001-5000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "1999",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "D2L (Desire2Learn) is a well-known, established EdTech company with public track record, consistent branding, and legitimate business operations \u2014 data reliable.",
+        "_usage": {
+          "input_tokens": 796,
+          "output_tokens": 341
+        }
+      },
+      "H03": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Faire is a legitimate, well-established B2B marketplace for wholesale goods with a strong reputation; SDET is a standard engineering role with no scam indicators.",
+        "redFlags": [],
+        "greenFlags": [
+          "Faire is a well-known, venture-backed B2B platform founded in 2017 with significant market presence",
+          "SDET (Software Development Engineer in Test) is a legitimate, specialized technical role common at established software companies",
+          "Domain faire.com is the official company domain with no typosquatting or suspicious indicators"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on Faire's official careers page (faire.com/careers or similar)",
+          "Confirm the hiring manager and recruiter details match Faire's LinkedIn company page and employee directory",
+          "Research Faire's funding history and investor backing through Crunchbase or similar sources"
+        ],
+        "companyType": "SaaS / E-commerce Marketplace",
+        "ownership": "Private",
+        "headcount": "501-1000",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2017",
+        "headquarters": "San Francisco, USA",
+        "confidenceNote": "Faire is a well-known, publicly-visible B2B commerce platform with extensive media coverage and investor backing. Data is reliable based on established company profile.",
+        "_usage": {
+          "input_tokens": 792,
+          "output_tokens": 361
+        }
+      },
+      "H04": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Miovision is a legitimate, established software company with a genuine QA Analyst role aligned with their core business.",
+        "redFlags": [],
+        "greenFlags": [
+          "Miovision is a well-known Canadian traffic analytics and smart intersection software company with a real product and customer base",
+          "QA Analyst is a standard, legitimate role directly relevant to software development",
+          "Company has substantial funding history and genuine operations in transportation/smart city technology"
+        ],
+        "verificationSteps": [
+          "Visit the official Miovision website (miovision.com) and verify the careers page listing",
+          "Check the company's LinkedIn profile for employee count, company information, and reviews",
+          "Confirm the job posting details match the official careers portal, including reporting structure and compensation"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Private",
+        "headcount": "201-500",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2007",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "Miovision is a recognized private software company in the smart city/traffic analytics space with documented funding rounds and established operations. Company and role data are reliable.",
+        "_usage": {
+          "input_tokens": 735,
+          "output_tokens": 332
+        }
+      },
+      "H05": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Axonify is a legitimate, well-established SaaS company in workforce training and learning management with a strong market presence and genuine Test Engineer roles.",
+        "redFlags": [],
+        "greenFlags": [
+          "Axonify is a recognized SaaS company specializing in microlearning and workforce training platforms",
+          "Test Engineer is a standard technical role with clear responsibilities at software development companies",
+          "Company has established funding history and sustained operations in the learning technology sector"
+        ],
+        "verificationSteps": [
+          "Visit Axonify's official website and verify the careers page lists this role",
+          "Check LinkedIn company profile for employee count, tenure, and employee reviews",
+          "Confirm the hiring contact uses an official @axonify.com email address"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Private",
+        "headcount": "201-500",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2010",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "Axonify is a known SaaS company with public market presence, customer base, and documented funding history \u2014 data reliable",
+        "_usage": {
+          "input_tokens": 733,
+          "output_tokens": 320
+        }
+      },
+      "H06": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Classic reshipping scam: home-based workers receive and forward packages, exposing them to money laundering and fraud liability.",
+        "redFlags": [
+          "Package reshipping role \u2014 a hallmark of advance-fee and money laundering scams",
+          "Home-based position with no physical company infrastructure or verifiable logistics presence",
+          "Generic company name with no established reputation in legitimate parcel logistics industry"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search corporate records (SEC, state business registries) for legal entity registration",
+          "Verify company website domain age, SSL certificate, and physical business address via independent mapping",
+          "Contact major parcel carriers (UPS, FedEx, DHL) to confirm Swift Parcel Logistics as an authorized partner"
+        ],
+        "companyType": "Logistics / Parcel Services",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "Company is not recognized; reshipping roles are a confirmed scam vector. Lack of verifiable logistics credentials combined with home-based package handling is a concrete fraud signal.",
+        "_usage": {
+          "input_tokens": 738,
+          "output_tokens": 323
+        }
+      },
+      "H07": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "This role involves handling funds transfers for an unverified company, which is a primary indicator of employment scams commonly used for money laundering or check fraud.",
+        "redFlags": [
+          "Role involves receiving, holding, transferring, or processing money and funds on behalf of employer \u2014 a hallmark of advance-fee and check-cashing employment scams",
+          "Company name 'Nova Finance Group' is generic and unverifiable; no established public presence or regulatory registration apparent",
+          "Funds Transfer Coordinator is a common position title in financial scams targeting job seekers to launder money or process fraudulent payments"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search the company name with your country's financial regulator (SEC, FCA, FINRA, etc.) to confirm legitimate registration and licensing",
+          "Verify the company's official website domain ownership and check for secure HTTPS, physical office address, and officer names",
+          "Contact the company directly using a phone number from their official website (not a job posting) and ask about the specific role and hiring process"
+        ],
+        "companyType": "Financial Services",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No verifiable public information found; company is unrecognized and unregistered. The combination of an unverified finance company with a funds-handling role presents extreme risk regardless of company obscurity.",
+        "_usage": {
+          "input_tokens": 735,
+          "output_tokens": 389
+        }
+      },
+      "H08": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Fraudulent impersonation of Deloitte using a typosquatted domain; classic remote data-entry scam targeting job seekers.",
+        "redFlags": [
+          "Domain 'deloitte-careers.online' is a typosquatted lookalike (Deloitte's official domain is deloitte.com); uses cheap .online TLD to mimic legitimacy",
+          "Vague 'Remote Data Entry Clerk' role from a major consulting firm is inconsistent with Deloitte's actual hiring practices and job market positioning",
+          "Generic remote data-entry offer is a hallmark scam pattern used to target job seekers with fake employment and payment schemes"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Visit Deloitte's official careers page at deloitte.com/careers (not the provided URL) to verify if this role exists",
+          "Cross-reference the job posting ID and hiring manager with Deloitte's official HR channels",
+          "Check Deloitte's official social media and press releases for any mention of this recruitment campaign"
+        ],
+        "companyType": "Consulting (impersonated)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "Domain analysis and role pattern indicate high-confidence scam impersonation; actual Deloitte is a well-known global consulting firm, but this posting is fraudulent.",
+        "_usage": {
+          "input_tokens": 800,
+          "output_tokens": 396
+        }
+      },
+      "H09": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Classic task farming scam with vague work, suspicious domain, and no verifiable company identity.",
+        "redFlags": [
+          "Generic free/cheap domain (brightpath-tasks.site) rather than professional business domain, typical of scam operations",
+          "Vague role description 'App Review Tasker' with no clear deliverables, company structure, or legitimate business model outlined",
+          "No verifiable company information, registration details, or established online presence beyond the suspicious homepage URL"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search company name and domain on WHOIS to verify legitimate registration and owner details",
+          "Check for company registration with business registries (SEC, state corporate databases, Companies House, etc.)",
+          "Search for independent reviews on platforms like Glassdoor, Indeed, Trustpilot, or BBB to identify user complaints or scam reports"
+        ],
+        "companyType": "Unknown / Likely Task Farming / Gig Work Scam",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No public information available; company name and domain are generic and unverifiable. Low confidence in legitimacy. Task farming and app review scams commonly use these exact tactics to recruit victims for unpaid or underpaid work with cash-out or survey-completion requirements.",
+        "_usage": {
+          "input_tokens": 800,
+          "output_tokens": 377
+        }
+      },
+      "H10": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Impersonation scam: fraudulent domain mimicking Health Canada with generic clerk role requesting remote work.",
+        "redFlags": [
+          "Domain 'canada-gov-jobs.org' impersonates official Health Canada (.gc.ca) \u2014 typosquatting/lookalike used for credential theft",
+          "Vague 'Remote Clerk' role with no specifics \u2014 classic bait for money-handling, check-processing, or reshipping scams",
+          "Non-official domain (.org instead of .gc.ca) \u2014 legitimate Canadian government jobs posted only on official sites (Canada.ca, Job Bank)"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Visit the official Health Canada recruitment portal at canada.ca or jobs.canada.ca \u2014 do not use the provided URL",
+          "Verify any job posting directly through official Government of Canada employment channels",
+          "Contact Health Canada's HR department directly via official contact information from canada.ca"
+        ],
+        "companyType": "Government (Impersonation Scam)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "High confidence this is a scam based on domain impersonation and vague remote clerk role \u2014 hallmarks of employment fraud targeting credential harvesting or financial exploitation.",
+        "_usage": {
+          "input_tokens": 799,
+          "output_tokens": 364
+        }
+      },
+      "H11": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Classic check deposit/money handling work-from-home scam targeting job seekers.",
+        "redFlags": [
+          "Role involves receiving, handling, and processing checks/money for employer \u2014 textbook money mule setup",
+          "Generic company name with no established brand presence \u2014 typical of fake job postings",
+          "Check deposit assistant is a known scam vector where victims receive fraudulent checks, deposit them, then wire funds back to scammers"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search for 'Payroll Express Solutions' on BBB, LinkedIn company pages, and official business registries \u2014 verify legal entity exists",
+          "Contact the company directly using phone/email from their official website (not from job posting) and ask about the role",
+          "Ask for detailed information about physical office location, company history, and references from current employees"
+        ],
+        "companyType": "Financial Services / Payroll Processing (Claimed)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognizable company data available; role definition matches known fraud patterns. The combination of unknown company + check handling role is a high-confidence scam indicator regardless of data availability.",
+        "_usage": {
+          "input_tokens": 736,
+          "output_tokens": 344
+        }
+      }
+    },
+    "1": {
+      "H01": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Kinaxis is a legitimate, well-established public software company with a genuine QA Automation Engineer role.",
+        "redFlags": [],
+        "greenFlags": [
+          "Kinaxis is a recognized public company (TSX: KXS) in the supply chain software sector with established market presence",
+          "QA Automation Engineer is a standard, legitimate technical role with no payment handling or reshipping duties",
+          "Corporate domain (kinaxis.com) is authentic and matches the company's official identity"
+        ],
+        "verificationSteps": [
+          "Visit the official Kinaxis careers page at kinaxis.com/careers to confirm the job posting",
+          "Verify the company's public listing on Toronto Stock Exchange (TSX: KXS) via exchange records",
+          "Cross-reference the recruiter's email domain with @kinaxis.com or official recruiting partner domains"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "1001-5000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "2003",
+        "headquarters": "Ottawa, Canada",
+        "confidenceNote": "Well-known public software company with verifiable market presence and financial data \u2014 information reliable",
+        "_usage": {
+          "input_tokens": 796,
+          "output_tokens": 333
+        }
+      },
+      "H02": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "D2L is a legitimate, publicly-traded educational technology company with a well-established global presence and credible hiring practices.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established public company (Nasdaq: DLTH) with transparent financial reporting and regulatory oversight",
+          "Large multinational headcount (5000+ employees) with documented offices across North America, Europe, and Asia-Pacific",
+          "Software Developer in Test is a standard, legitimate role in a core business function (quality assurance) for a SaaS platform"
+        ],
+        "verificationSteps": [
+          "Visit the official D2L careers page (d2l.com/careers) to verify the specific job posting",
+          "Confirm the hiring manager's email domain matches @d2l.com (not third-party recruiter or free email)",
+          "Research D2L on Nasdaq under ticker DLTH and cross-reference annual revenue and employee counts from recent SEC filings"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "5001-10000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "1999",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "Well-known public SaaS company with extensive regulatory disclosures, established brand presence, and verifiable corporate history \u2014 data highly reliable.",
+        "_usage": {
+          "input_tokens": 796,
+          "output_tokens": 368
+        }
+      },
+      "H03": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Faire is a legitimate, well-established B2B marketplace platform with genuine SDET engineering roles.",
+        "redFlags": [],
+        "greenFlags": [
+          "Faire is a recognized B2B wholesale marketplace founded in 2017 with significant market presence",
+          "SDET (Software Development Engineer in Test) is a legitimate technical engineering role with clear career path",
+          "Homepage domain faire.com matches the company name with no typosquatting or suspicious indicators"
+        ],
+        "verificationSteps": [
+          "Visit faire.com and verify active marketplace operations and company information",
+          "Search for Faire on LinkedIn to confirm employee base and engineering team presence",
+          "Review Glassdoor or similar sites for employee reviews and compensation data to validate legitimacy"
+        ],
+        "companyType": "SaaS / E-commerce (B2B Marketplace)",
+        "ownership": "Private",
+        "headcount": "501-1000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "2017",
+        "headquarters": "San Francisco, USA",
+        "confidenceNote": "Faire is a well-known B2B wholesale marketplace platform with established funding history and public market presence. Company and role data are reliable.",
+        "_usage": {
+          "input_tokens": 792,
+          "output_tokens": 329
+        }
+      },
+      "H04": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Miovision is a legitimate, established Canadian traffic intelligence software company with a strong market presence and credible QA Analyst role.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established company in traffic technology/smart city solutions with real products and customers",
+          "QA Analyst is a standard technical role with clear professional duties, not a financial or reshipping position",
+          "Known to operate in Canada with physical headquarters and verifiable business operations"
+        ],
+        "verificationSteps": [
+          "Visit the official Miovision website (miovision.com) and confirm current careers page lists this role",
+          "Verify the job posting email domain matches @miovision.com or official hiring partner",
+          "Search Miovision on LinkedIn and confirm the company profile shows employees, industry presence, and recent hiring activity",
+          "Cross-reference the specific job posting details (team, manager, salary range) against the official careers listing"
+        ],
+        "companyType": "Software / SaaS (Traffic Intelligence & Smart City Solutions)",
+        "ownership": "Private",
+        "headcount": "201-500",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2007",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "Miovision is a well-known player in traffic management and smart city technology with a solid public track record, multiple funding rounds, and recognizable enterprise clients. Data is reliable.",
+        "_usage": {
+          "input_tokens": 735,
+          "output_tokens": 378
+        }
+      },
+      "H05": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Axonify is a legitimate, well-established Canadian SaaS company with a strong reputation in microlearning and employee training; Test Engineer is a standard technical role.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established Canadian software company founded in 2010 with significant market presence in enterprise learning",
+          "Test Engineer is a standard, well-defined technical role with clear responsibilities in QA/testing",
+          "Known for serving major enterprise clients across multiple industries"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on Axonify's official careers page (axonify.com/careers)",
+          "Confirm recruiter identity and contact details through official company channels",
+          "Research Axonify on Crunchbase, LinkedIn, and G2 for user reviews and company validation"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Private",
+        "headcount": "201-500",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2010",
+        "headquarters": "Toronto, Canada",
+        "confidenceNote": "Axonify is a recognized SaaS company with public market presence and established business operations; data reliability is high based on known market position in enterprise microlearning sector.",
+        "_usage": {
+          "input_tokens": 733,
+          "output_tokens": 340
+        }
+      },
+      "H06": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Classic reshipping scam: home-based package inspector roles are a known fraud vector used to launder stolen goods and involve processing/handling packages for illicit purposes.",
+        "redFlags": [
+          "Home-based package inspector role matches known reshipping scam pattern where workers receive stolen packages and forward them to third parties",
+          "Vague job title and lack of specificity about actual duties, company operations, or logistics infrastructure typical of fraudulent schemes",
+          "No verifiable company information provided; Swift Parcel Logistics is not a recognized major logistics provider in the industry"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search business registration databases and verify Swift Parcel Logistics exists as a legitimate registered company with physical headquarters",
+          "Contact the company directly using independently verified phone/address (not contact info from job posting) and confirm the position exists",
+          "Research employee reviews on Glassdoor, Indeed, and LinkedIn; reshipping scams typically have zero legitimate employee history"
+        ],
+        "companyType": "Logistics / Parcel Services",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "Company name is generic and not recognizable as an established logistics provider. The role itself (home-based package inspector) is a well-documented scam vector. No verifiable public information available.",
+        "_usage": {
+          "input_tokens": 738,
+          "output_tokens": 371
+        }
+      },
+      "H07": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "High-risk role involving money transfer processing with no verifiable company presence.",
+        "redFlags": [
+          "Role explicitly involves receiving, holding, transferring, or processing funds \u2014 a primary job scam indicator",
+          "Company name 'Nova Finance Group' is generic and unverifiable with no known public presence",
+          "Funds Transfer Coordinator roles are commonly used in advance-fee and money laundering scams"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search SEC EDGAR database for company filings and regulatory registration",
+          "Verify company headquarters address and phone number independently",
+          "Request official company documentation and employee handbook from verified corporate email domain"
+        ],
+        "companyType": "Financial Services",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognizable public presence \u2014 company unverifiable. Role type matches known scam patterns involving money movement.",
+        "_usage": {
+          "input_tokens": 735,
+          "output_tokens": 280
+        }
+      },
+      "H08": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Deloitte is a legitimate Fortune 500 consulting firm, but this posting uses a fake domain (deloitte-careers.online) impersonating the brand\u2014a classic scam indicator.",
+        "redFlags": [
+          "Domain deloitte-careers.online is a typosquatted lookalike; Deloitte's official careers domain is deloitte.com",
+          "Vague 'Remote Data Entry Clerk' role with no specific team, project, or business context\u2014typical of phishing job scams",
+          "Legitimate Deloitte roles are posted on deloitte.com/careers, not third-party domains"
+        ],
+        "greenFlags": [
+          "Deloitte is a well-known, legitimate multinational consulting firm"
+        ],
+        "verificationSteps": [
+          "Visit deloitte.com/careers directly (not any link provided) to verify this role exists",
+          "Check the domain registration of deloitte-careers.online\u2014likely recently registered or registered to an unknown party",
+          "Contact Deloitte's HR directly via the official website to confirm whether this posting is genuine"
+        ],
+        "companyType": "Consulting",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$50B+",
+        "founded": "1845",
+        "headquarters": "New York, United States",
+        "confidenceNote": "Deloitte is a well-known public company with reliable data; however, this job posting uses a fraudulent domain impersonating the brand, making it a confirmed scam regardless of company legitimacy.",
+        "_usage": {
+          "input_tokens": 800,
+          "output_tokens": 415
+        }
+      },
+      "H09": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "BrightPath Tasks exhibits multiple hallmarks of a task-scam operation: vague work scope, suspicious domain infrastructure, and a generic microtask role commonly used in work-from-home fraud schemes.",
+        "redFlags": [
+          "Generic microtask role ('App Review Tasker') with undefined scope and deliverables\u2014classic gig-scam indicator",
+          "Non-standard domain (.site TLD) with no established company presence\u2014suggests new or disposable operation",
+          "No verifiable company identity, registration, or social proof discoverable from provided information"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search company registration records (SEC, state business filings) for 'BrightPath Tasks'\u2014verify legal entity status",
+          "Check domain WHOIS registration and age; newly registered domains with privacy shields are higher risk",
+          "Request formal employee handbook, tax documentation (W-9/1099 terms), and company registration proof before engagement"
+        ],
+        "companyType": "Gig Work / Task Platform (unverified)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognizable company footprint; limited public data and suspicious domain infrastructure suggest high fraud risk. Microtask roles offered by unverifiable entities are frequent vectors for payment scams, credential theft, and unpaid labor schemes.",
+        "_usage": {
+          "input_tokens": 800,
+          "output_tokens": 383
+        }
+      },
+      "H10": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Impersonation of Canadian government agency with suspicious domain and vague clerk role\u2014classic job scam profile.",
+        "redFlags": [
+          "Domain 'canada-gov-jobs.org' impersonates official Canadian government (typosquatting .org instead of .gc.ca), a concrete scam signal",
+          "Non-specific 'Remote Clerk' role with no job description details is hallmark of generic scam postings",
+          "Company name 'Health Canada Recruitment Unit' is fabricated; Health Canada is a real federal department but does not use this recruiting entity name"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Verify through official Health Canada website (canada.ca/health-canada) or Government of Canada jobs portal (jobs.gc.ca)",
+          "Check for legitimate .gc.ca domain; confirm no 'Health Canada Recruitment Unit' exists as official entity",
+          "Contact Health Canada HR directly via verified phone number from official website to confirm job posting"
+        ],
+        "companyType": "Government (Impersonation)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "High confidence in scam assessment due to concrete impersonation signals (fake domain + government agency impersonation). No legitimate verification possible.",
+        "_usage": {
+          "input_tokens": 799,
+          "output_tokens": 364
+        }
+      },
+      "H11": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Classic check deposit scam: role involves receiving and processing checks/money for employer, a concrete fraud signal.",
+        "redFlags": [
+          "Role involves receiving, holding, and depositing checks on behalf of employer\u2014hallmark of advance-fee and money laundering scams",
+          "Generic company name with no verifiable presence; 'Payroll Express Solutions' is a common placeholder name used in scam job postings",
+          "Vague job title and responsibilities typical of remote work scams targeting vulnerable job seekers"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search for the company's official website and verify domain registration details and SSL certificate legitimacy",
+          "Contact the company directly using a phone number from their verified official website (not from the job posting)",
+          "Cross-reference with Better Business Bureau (BBB), company registration databases, and financial regulatory agencies"
+        ],
+        "companyType": "Financial Services (Payroll Processing) \u2014 Unverified",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognizable company data available; generic name and check-handling role are strong indicators of employment scam. Legitimate payroll processors do not hire remote assistants to deposit employer checks.",
+        "_usage": {
+          "input_tokens": 736,
+          "output_tokens": 352
+        }
+      }
+    },
+    "2": {
+      "H01": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Kinaxis is a legitimate, publicly-traded Canadian software company with a strong reputation in supply chain management; QA Automation Engineer is a standard technical role with no scam indicators.",
+        "redFlags": [],
+        "greenFlags": [
+          "Kinaxis is a well-established public company (TSX: KXS) founded in 1993 with strong market presence",
+          "QA Automation Engineer is a genuine technical role aligned with software development operations",
+          "Homepage domain matches official company branding with no typosquatting or suspicious hosting indicators"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on official Kinaxis careers page (careers.kinaxis.com or linked from homepage)",
+          "Check company registration on TSX (Toronto Stock Exchange) for ticker KXS and financial disclosures",
+          "Confirm recruiter/hiring manager details through official Kinaxis LinkedIn company page and employee directory"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "1001-5000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "1993",
+        "headquarters": "Ottawa, Canada",
+        "confidenceNote": "Kinaxis is a well-known, publicly-traded software company with reliable public financial and corporate data available through TSX filings and established business reputation.",
+        "_usage": {
+          "input_tokens": 796,
+          "output_tokens": 361
+        }
+      },
+      "H02": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "D2L is a legitimate, publicly-traded EdTech company with a strong market presence; Software Developer in Test is a standard engineering role with no scam indicators.",
+        "redFlags": [],
+        "greenFlags": [
+          "D2L (Desire2Learn) is a well-established publicly-traded company on TSX with ~$200M+ annual revenue",
+          "Legitimate EdTech/SaaS business model serving educational institutions globally since 2000",
+          "Software Developer in Test is a standard QA/testing engineering role with clear technical scope"
+        ],
+        "verificationSteps": [
+          "Verify the job posting URL matches careers.d2l.com or official D2L job boards",
+          "Confirm recruiter email domain is @d2l.com or official recruiting partner",
+          "Review D2L's investor relations and Crunchbase for company financials and structure"
+        ],
+        "companyType": "Software / SaaS (EdTech)",
+        "ownership": "Public",
+        "headcount": "1001-5000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "2000",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "Well-known public EdTech company with established track record \u2014 data reliable",
+        "_usage": {
+          "input_tokens": 796,
+          "output_tokens": 346
+        }
+      },
+      "H03": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Faire is a legitimate, well-established B2B wholesale marketplace with strong market presence and backing; SDET is a standard legitimate engineering role.",
+        "redFlags": [],
+        "greenFlags": [
+          "Faire is a recognized, venture-backed B2B e-commerce platform founded 2017 with significant market traction and brand recognition",
+          "SDET (Software Development Engineer in Test) is a standard, legitimate technical role with well-defined career path in software engineering",
+          "Homepage domain faire.com matches expected company branding with no typosquatting or suspicious indicators"
+        ],
+        "verificationSteps": [
+          "Visit faire.com and verify company details, leadership team, and press coverage",
+          "Search LinkedIn for Faire Inc. and review current employee base and company size",
+          "Check Faire's careers page directly at faire.com/careers to verify the SDET role posting matches job board listing"
+        ],
+        "companyType": "SaaS / E-commerce (B2B Wholesale Marketplace)",
+        "ownership": "Private",
+        "headcount": "501-1000",
+        "annualRevenue": "$200M-$1B",
+        "founded": "2017",
+        "headquarters": "San Francisco, USA",
+        "confidenceNote": "Well-known SaaS company with established market presence, significant funding rounds, and public brand recognition \u2014 data reliable",
+        "_usage": {
+          "input_tokens": 792,
+          "output_tokens": 362
+        }
+      },
+      "H04": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Miovision is a legitimate, well-established Canadian software company with a strong market presence in traffic management and mobility solutions.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established company with significant market presence in intelligent transportation systems",
+          "QA Analyst is a standard, legitimate technical role with clear job functions",
+          "Canadian company with verifiable operations and customer base in traffic/mobility sector"
+        ],
+        "verificationSteps": [
+          "Visit the official Miovision website directly (not through a link in the job posting) and verify their careers page",
+          "Search for Miovision on LinkedIn and review company profile, employee count, and recent hires",
+          "Confirm the hiring recruiter's email domain matches @miovision.com or their official recruiting partner domain"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Private",
+        "headcount": "201-500",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2007",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "Miovision is a well-known company in the intelligent transportation and traffic management software sector with established market presence and customer base; data reliability is high.",
+        "_usage": {
+          "input_tokens": 735,
+          "output_tokens": 332
+        }
+      },
+      "H05": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Axonify is a legitimate, well-established Canadian SaaS company with a strong market presence in mobile learning and microlearning platforms.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established SaaS company founded in 2010 with proven product-market fit in corporate learning",
+          "Significant funding history and private investment backing from recognized venture firms",
+          "Test Engineer is a legitimate technical role aligned with software product development"
+        ],
+        "verificationSteps": [
+          "Visit Axonify's official website and verify the careers page lists this role",
+          "Check LinkedIn for Axonify's company profile and current employee count to confirm legitimacy",
+          "Review Glassdoor or similar platforms for employee reviews and compensation data for this role"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Private",
+        "headcount": "501-1000",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2010",
+        "headquarters": "Kitchener, Canada",
+        "confidenceNote": "Axonify is a well-known and established SaaS company in the corporate learning/microlearning space with strong market presence and funding history \u2014 data reliable.",
+        "_usage": {
+          "input_tokens": 733,
+          "output_tokens": 330
+        }
+      },
+      "H06": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Classic reshipping scam: applicants receive and forward packages, exposing them to money laundering liability and financial loss.",
+        "redFlags": [
+          "Home-based package inspector role involves receiving and reshipping packages\u2014a hallmark reshipping scam used in money laundering and fraud",
+          "Swift Parcel Logistics is not a recognized major logistics carrier; vague branding increases deception risk",
+          "No verifiable company presence; unknown headquarters, founding year, and financial data suggest fabricated entity"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search for Swift Parcel Logistics on the Better Business Bureau (BBB), SEC filings, and official business registries",
+          "Verify the company domain ownership and registration details; check for recent creation or privacy masking",
+          "Contact the claimed parent company or headquarters directly using independently verified contact information, never using details from the job posting"
+        ],
+        "companyType": "Logistics / Shipping (claimed)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognized company data available; reshipping role is a concrete scam signal regardless of company recognizability. Recommendation is HIGH confidence AVOID.",
+        "_usage": {
+          "input_tokens": 738,
+          "output_tokens": 345
+        }
+      },
+      "H07": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Role involves processing and transferring funds, a classic hallmark of advance-fee and money laundering job scams.",
+        "redFlags": [
+          "Role explicitly involves funds transfer coordination\u2014receiving, holding, or processing money on behalf of employer",
+          "Company name is generic and non-descriptive; no distinctive brand identity or market presence",
+          "No verifiable public information available; unrecognized entity with no traceable business registration"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search company registry (e.g., SEC EDGAR, Companies House, local business registration) for legal entity and financial filings",
+          "Verify company website domain registration, SSL certificate, and business address via independent sources",
+          "Contact the company's claimed headquarters directly using independently verified phone number\u2014never use contact info from job posting"
+        ],
+        "companyType": "Financial Services (claimed)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No public company data available. Generic name and funds-transfer role are strong scam indicators. Treat with high suspicion.",
+        "_usage": {
+          "input_tokens": 735,
+          "output_tokens": 319
+        }
+      },
+      "H08": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Highly likely phishing/scam impersonation of Deloitte using a fraudulent domain; legitimate Deloitte careers use official deloitte.com subdomain.",
+        "redFlags": [
+          "Domain 'deloitte-careers.online' is a typosquatted/lookalike domain impersonating the legitimate Deloitte brand; official Deloitte careers portal is careers.deloitte.com",
+          "Generic 'Remote Data Entry Clerk' role is a classic bait-and-switch scam pattern commonly used in employment fraud schemes",
+          "Vague remote data-entry role offered by unidentifiable entity matches concrete scam signal #3 (generic remote clerical work by unidentifiable company)"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Do NOT click any links in the posting; instead navigate directly to careers.deloitte.com (official Deloitte domain) and search for identical role posting",
+          "Verify the recruiter's email domain ends in @deloitte.com, not a free/third-party email provider",
+          "Contact Deloitte's official HR department directly to confirm whether this role and recruiter exist"
+        ],
+        "companyType": "Consulting",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$50B+",
+        "founded": "1845",
+        "headquarters": "New York, USA",
+        "confidenceNote": "Deloitte is a well-known multinational; however, the provided URL is definitively fraudulent. The domain impersonation is the primary data point here, and confidence in the scam assessment is very high.",
+        "_usage": {
+          "input_tokens": 800,
+          "output_tokens": 433
+        }
+      },
+      "H09": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "BrightPath Tasks exhibits multiple hallmarks of a gig-work scam: vague tasking role, non-standard domain (.site), unverifiable company identity, and lack of established legitimacy.",
+        "redFlags": [
+          "Generic .site domain with no verifiable company registration or online presence\u2014common in scam operations",
+          "Vague 'App Review Tasker' role with no clear deliverables, compensation structure, or employer details\u2014typical of bait-and-switch scams",
+          "No identifiable company history, leadership, or third-party verification; unknown entity presenting as a legitimate task platform"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search public business registries (SEC, state corporation databases, BBB) for 'BrightPath Tasks'\u2014expect no results",
+          "Check domain WHOIS and hosting provider to identify if registration is obscured or recently created",
+          "Search job boards and review sites (Glassdoor, Indeed, Trustpilot) for employee reviews or complaints"
+        ],
+        "companyType": "Gig Work / Task Platform (claimed)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "Unverifiable company with no public footprint. Combination of suspicious domain, vague role, and lack of legitimacy indicators strongly suggest scam. Low confidence in any company data due to apparent non-existence.",
+        "_usage": {
+          "input_tokens": 800,
+          "output_tokens": 396
+        }
+      },
+      "H10": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Impersonation of a Canadian government agency using a fraudulent domain; classic job scam targeting remote workers.",
+        "redFlags": [
+          "Domain 'canada-gov-jobs.org' impersonates official Government of Canada (which uses .gc.ca domains) \u2014 typosquatting and government impersonation",
+          "Generic 'Health Canada Recruitment Unit' name does not match official Health Canada hiring practices or structure",
+          "Vague 'Remote Clerk' role with no specifics is typical of advance-fee and credential-harvesting scams"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Visit the official Government of Canada jobs portal at canada.ca or jobs.canada.ca and search for legitimate Health Canada postings",
+          "Verify the hiring entity's official contact information through Health Canada's main website (health.canada.ca)",
+          "Check the domain registrant and registration date of canada-gov-jobs.org; legitimate government domains use .gc.ca"
+        ],
+        "companyType": "Government (Impersonated)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "High confidence in scam assessment; domain and naming pattern are hallmarks of government impersonation scams. No legitimate Canadian government agency uses .org domains or 'Recruitment Unit' branding.",
+        "_usage": {
+          "input_tokens": 799,
+          "output_tokens": 377
+        }
+      },
+      "H11": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Classic check deposit/payment processing job scam targeting remote workers with money-handling responsibilities.",
+        "redFlags": [
+          "Role involves receiving, depositing, and processing checks/payments on behalf of employer \u2014 direct money-handling responsibility is a hallmark scam signal",
+          "Generic company name with no distinctive identity or traceable public presence suggests shell entity",
+          "Vague job title 'Check Deposit Assistant' with undefined scope is typical of fake remote employment schemes"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search the company name on SEC EDGAR, BBB, and state business registries to verify legal registration",
+          "Contact the company via phone using a number from official company website (not job posting)",
+          "Request employee references or company LinkedIn page with active employee profiles"
+        ],
+        "companyType": "Financial Services / Payroll Processing (unverified)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognized public data; company name and role structure match known job scam patterns. High suspicion of fraudulent operation designed to exploit remote workers for check fraud or money laundering. Confidence in risk assessment: HIGH.",
+        "_usage": {
+          "input_tokens": 736,
+          "output_tokens": 338
+        }
+      }
+    }
+  }
+}
