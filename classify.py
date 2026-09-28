@@ -4,14 +4,29 @@ Prompt text mirrors vetCompanyWithAI() in my-jobguard/src/App.jsx exactly.
 If you change the prompt in App.jsx, change it here too.
 """
 import json
+import pathlib
 import re
 
 import anthropic
 
 MODEL = "claude-haiku-4-5-20251001"   # same model as App.jsx
 MAX_TOKENS = 900                      # same as App.jsx
+PROMPT_VERSION = "v2"                 # v1 = exact App.jsx copy; v2 = + no-web-access / unknown-is-not-scam rule
 
-client = anthropic.Anthropic()        # reads ANTHROPIC_API_KEY from the environment
+def _load_dotenv(path=".env"):
+    """Load KEY=VALUE lines from a local .env file (git-ignored) into os.environ,
+    without overriding a key that is already set in the environment."""
+    import os
+    f = pathlib.Path(__file__).with_name(path)
+    if f.exists():
+        for line in f.read_text(encoding="utf-8").splitlines():
+            if "=" in line and not line.lstrip().startswith("#"):
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip('"'))
+
+
+_load_dotenv()
+client = anthropic.Anthropic()        # reads ANTHROPIC_API_KEY from the environment (or .env)
 
 JSON_SPEC = """Reply with ONLY raw JSON (no markdown fences, no extra text):
 {
@@ -31,6 +46,17 @@ JSON_SPEC = """Reply with ONLY raw JSON (no markdown fences, no extra text):
 }"""
 
 
+# v2 rule: added after Run 1 false positive (Palitronica flagged AVOID 3/3 because the
+# model treated "I don't know this company" as evidence of fraud and claimed searches it never ran).
+UNKNOWN_RULE = (
+    "\nYou have no internet access and cannot search. Never claim you searched, looked anything up, "
+    "or found no results."
+    "\nNot recognizing a company is NOT evidence of fraud. If you do not recognize the company and the "
+    "role and URL show no concrete scam signals, use riskLevel MEDIUM and recommendation CAUTION, and say "
+    "it is unverified. Use AVOID only when there are concrete red flags in the company name, role, or URL."
+)
+
+
 def build_prompt(company: str, role: str = "", url: str = "") -> str:
     url_context = f'\nHomepage URL: "{url}"' if url else ""
     role_line = f'\nRole: "{role}"' if role else ""
@@ -45,6 +71,7 @@ def build_prompt(company: str, role: str = "", url: str = "") -> str:
         "For well-known companies (Google, Microsoft, Anthropic, etc.) use accurate known data.\n"
         "For obscure or likely fake companies, use Unknown for financial fields and note low confidence.\n"
         f"headcount and annualRevenue should be ranges, not exact figures.{url_rule}"
+        f"{UNKNOWN_RULE}"
     )
 
 

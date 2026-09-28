@@ -43,6 +43,8 @@ That's it. Everything below is reference.
 **The JobGuard app does NOT need to be running.** No VS Code, no Vite dev server, no browser.
 
 > ⚠ **Keep in sync:** if the prompt or model changes in `App.jsx`, update `classify.py` to match. Otherwise the harness tests an old version of the app.
+>
+> **Current state:** `classify.py` is on prompt **v2**, one rule *ahead* of `App.jsx` (v1), on purpose. It's an experiment being validated by the eval (see Results log). `PROMPT_VERSION` in `classify.py` shows which version is active.
 
 ## Files
 
@@ -50,7 +52,8 @@ That's it. Everything below is reference.
 |---|---|
 | `start.ps1` | Activates the venv and sets the API key for this window |
 | `classify.py` | JobGuard's prompt plus the `vet()` function (one API call) |
-| `run_eval.py` | Runs the whole dataset and prints the PASS/MISS table |
+| `run_eval.py` | Runs the whole dataset, prints the PASS/MISS table, and saves the run to `results/` |
+| `results/` | One `run_<date>_<time>.txt` (the table) and `.json` (full model responses) per run, including prompt version and model |
 | `data/golden.jsonl` | The labeled test companies (the ground truth) |
 | `requirements.txt` | Python packages to install |
 | `.gitignore` | Keeps `.venv`, cache files, and keys out of Git |
@@ -176,6 +179,45 @@ Score (AVOID = the "scam" class):
 
 **Next:** inspect 007's `redFlags` and `confidenceNote`, rerun it several times for stability, and test it with its real URL to see whether a domain fixes the false positive.
 
+### Run 1 follow-up: 007 repeated 3 times (Sept 28, 2026)
+
+`AVOID, AVOID, AVOID`: a **consistent** failure, not random.
+
+**Root cause** (from 007's full JSON output): the model has no internet access, but its red flags claimed searches it never ran ("returns no legitimate business results," "no verifiable LinkedIn company page"). It treated "I don't know this company" as evidence of fraud, and escalated low confidence to "immediate rejection," which the prompt never asked for. A known LLM failure mode: hallucinated verification.
+
+**Change: prompt v2** (`PROMPT_VERSION = "v2"` in `classify.py`). Added a rule: the model has no web access and must never claim it searched; not recognizing a company is not evidence of fraud; unknown companies with no concrete scam signals get CAUTION ("unverified"); AVOID requires concrete red flags in the name, role, or URL.
+
+> v2 exists only in the harness for now. Port it to `App.jsx` only after the eval shows it fixes 007 without breaking the scam rows.
+
+### Run 2: prompt v2, two full passes (Sept 28, 2026)
+
+Pass criteria: 007 no longer AVOID, and all 11 AVOID rows still caught (recall stays 100%).
+
+007 alone, 3 repeats: `CAUTION, CAUTION, CAUTION` (v1 was `AVOID` 3/3). **False positive fixed.**
+
+| Row | Run 2a (not saved, pasted) | Run 2b (`results/run_20260928_141322`) |
+|---|---|---|
+| 007 Palitronica (expected APPLY) | CAUTION | CAUTION |
+| 009 QuickHire Solutions (expected AVOID) | **CAUTION (miss)** | AVOID |
+| 011 Apex Digital Payments (expected AVOID) | **CAUTION (miss)** | **CAUTION (miss)** |
+| All other rows | pass | pass |
+| Matched | 17/20 | 18/20 |
+
+Score, v1 vs. v2 (AVOID = the "scam" class):
+
+| Metric | v1 (Run 1) | v2 (Run 2a) | v2 (Run 2b) |
+|---|---|---|---|
+| Recall | 11/11 = 100% | 9/11 = 82% | 10/11 = 91% |
+| Precision | 11/12 = 92% | 9/9 = 100% | 10/10 = 100% |
+| False-positive rate | 1/9 = 11% | 0/9 = 0% | 0/9 = 0% |
+
+**Findings:**
+- **v2 fixed the false positive but over-corrected:** recall dropped. A trade-off, not a free win.
+- **011 is a consistent miss (2/2).** The model's own red flags *name* the scam ("role title commonly used in work-from-home scams involving money handling"), yet it chose CAUTION. It recognizes the pattern; v2's decision rule biases it toward CAUTION.
+- **009 is unstable:** CAUTION in one run, AVOID in the next. A borderline case where non-determinism decides the verdict, which is exactly what Day 2's repeat-run stability metric is for.
+- 007's v2 red flags are softer, but still hint at checks it can't do ("not recognized in public databases"). Worth tightening.
+
+**Next: prompt v3.** Keep the "unknown is not a scam" rule, but define known scam **role patterns** as concrete red flags that require AVOID (money/payment handling, package reshipping, vague data entry, mystery shopper, crypto trading assistant, government impersonation). Then rerun 3 times to measure stability.
 **How to read `run_eval.py` output:** each row shows `ID  EXPECTED  ACTUAL  RESULT  COMPANY`. PASS means the model matched my label; MISS means investigate that row. The last line is the overall score.
 ## Roadmap
 

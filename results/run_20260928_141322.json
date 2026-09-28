@@ -1,0 +1,692 @@
+{
+  "stamp": "20260928_141322",
+  "prompt_version": "v2",
+  "model": "claude-haiku-4-5-20251001",
+  "matched": 18,
+  "total": 20,
+  "errors": 0,
+  "rows": [
+    {
+      "id": "001",
+      "company": "Anthropic",
+      "role": "SDET",
+      "url": "https://anthropic.com",
+      "expected": "APPLY",
+      "note": "well-known, correct domain",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Anthropic is a well-established AI safety company founded by former OpenAI leaders with legitimate funding and public credibility.",
+        "redFlags": [],
+        "greenFlags": [
+          "Anthropic is a recognized AI research company founded in 2021 by Dario and Daniela Amodei with significant venture funding",
+          "SDET (Software Development Engineer in Test) is a legitimate technical role commonly found at major tech companies",
+          "Homepage domain anthropic.com matches the known official website of the company"
+        ],
+        "verificationSteps": [
+          "Visit anthropic.com and navigate to their careers page to verify the specific job posting",
+          "Research Anthropic's leadership team and funding history through reputable business news sources",
+          "Verify the email domain of any recruiter contact matches @anthropic.com or official partner domains"
+        ],
+        "companyType": "Software / SaaS - AI Research and Development",
+        "ownership": "Private",
+        "headcount": "201-500",
+        "annualRevenue": "$10M-$50M",
+        "founded": "2021",
+        "headquarters": "San Francisco, USA",
+        "confidenceNote": "Well-known AI research company with public visibility, substantial venture funding, and established reputation \u2014 data reliable"
+      }
+    },
+    {
+      "id": "002",
+      "company": "Shopify",
+      "role": "QA Engineer",
+      "url": "https://shopify.com",
+      "expected": "APPLY",
+      "note": "well-known, correct domain",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Shopify is a legitimate, well-established public e-commerce platform company with a strong reputation and QA Engineer is a standard technical role.",
+        "redFlags": [],
+        "greenFlags": [
+          "Shopify is a publicly traded company (TSE: SHOP) with verifiable SEC filings and transparent corporate governance",
+          "QA Engineer is a legitimate, standard technical role commonly found at software and SaaS companies",
+          "Official homepage URL matches expected Shopify domain with no typosquatting or suspicious variations"
+        ],
+        "verificationSteps": [
+          "Visit investor.shopify.com to verify public company status and corporate information",
+          "Check the official Shopify careers page at shopify.jobs to confirm job posting authenticity",
+          "Verify the recruiter or hiring manager's email uses @shopify.com domain and cross-reference on LinkedIn"
+        ],
+        "companyType": "Software / SaaS / E-commerce",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$1B-$10B",
+        "founded": "2006",
+        "headquarters": "Ottawa, Canada",
+        "confidenceNote": "Well-known public company with extensive public financial records and established track record \u2014 data highly reliable"
+      }
+    },
+    {
+      "id": "003",
+      "company": "OpenText",
+      "role": "Software Developer in Test",
+      "url": "https://opentext.com",
+      "expected": "APPLY",
+      "note": "well-known Waterloo company",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "OpenText is a legitimate, established public software company with a well-known enterprise content management platform and strong market presence.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established publicly-traded company with over 20 years of market presence",
+          "Software Developer in Test is a standard, legitimate role in software quality assurance",
+          "Official domain opentext.com matches company branding and is not suspicious"
+        ],
+        "verificationSteps": [
+          "Verify the job posting URL matches opentext.com careers domain",
+          "Check LinkedIn for OpenText's company page and employee verification",
+          "Confirm the hiring manager and recruiter details through official OpenText contacts"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "5001-10000",
+        "annualRevenue": "$1B-$10B",
+        "founded": "1991",
+        "headquarters": "Waterloo, Canada",
+        "confidenceNote": "Well-established public company with strong market reputation \u2014 data reliable"
+      }
+    },
+    {
+      "id": "004",
+      "company": "Dialpad",
+      "role": "Sr. SDET",
+      "url": "https://dialpad.com",
+      "expected": "APPLY",
+      "note": "QT applied here",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Dialpad is a legitimate, well-established cloud communications SaaS company with strong market presence and proper corporate backing.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established SaaS company in cloud communications with recognizable brand presence",
+          "Sr. SDET (Senior Software Development Engineer in Test) is a legitimate technical role at reputable tech companies",
+          "Professional domain dialpad.com matches known company identity"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on Dialpad's official careers page at dialpad.com/careers",
+          "Cross-reference the hiring manager and recruiter names on LinkedIn",
+          "Confirm email domain is @dialpad.com, not a free email or lookalike domain"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Private",
+        "headcount": "501-1000",
+        "annualRevenue": "$50M-$200M",
+        "founded": "2013",
+        "headquarters": "San Francisco, United States",
+        "confidenceNote": "Well-known SaaS company with established market presence \u2014 data reliable based on known company profile and industry positioning."
+      }
+    },
+    {
+      "id": "005",
+      "company": "Microsoft",
+      "role": "Software Engineer",
+      "url": "https://microsoft.com",
+      "expected": "APPLY",
+      "note": "well-known, correct domain",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Microsoft is a legitimate, well-established multinational technology corporation with a strong reputation for Software Engineer roles.",
+        "redFlags": [],
+        "greenFlags": [
+          "Official Microsoft domain (microsoft.com) matches company identity",
+          "Software Engineer is a standard, legitimate role at Microsoft",
+          "Fortune 500 public company with transparent hiring practices"
+        ],
+        "verificationSteps": [
+          "Visit careers.microsoft.com directly to verify the specific job posting",
+          "Confirm the recruiter's email uses @microsoft.com domain",
+          "Review the job posting on LinkedIn to cross-reference details"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$10B+",
+        "founded": "1975",
+        "headquarters": "Redmond, Washington, United States",
+        "confidenceNote": "Well-known public company with verified financial data and established hiring practices \u2014 data highly reliable"
+      }
+    },
+    {
+      "id": "006",
+      "company": "RBC",
+      "role": "QA Analyst",
+      "url": "https://rbc.com",
+      "expected": "APPLY",
+      "note": "major Canadian bank",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "RBC is a legitimate, well-established global financial institution with a strong reputation and authentic job postings.",
+        "redFlags": [],
+        "greenFlags": [
+          "RBC (Royal Bank of Canada) is a Fortune 500 publicly-traded company with decades of operational history",
+          "Official domain rbc.com matches the company's legitimate web presence",
+          "QA Analyst is a standard, legitimate role commonly hired by major financial institutions"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on RBC's official careers page (careers.rbc.com or careers section on rbc.com)",
+          "Confirm the hiring manager and recruiter details match RBC's internal directory",
+          "Check RBC's LinkedIn company page for recent hiring activity in QA/testing roles"
+        ],
+        "companyType": "Financial Services",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$10B+",
+        "founded": "1869",
+        "headquarters": "Toronto, Canada",
+        "confidenceNote": "Well-known multinational public company \u2014 data reliable and verified through established corporate records"
+      }
+    },
+    {
+      "id": "007",
+      "company": "Palitronica",
+      "role": "QA Engineer",
+      "url": "",
+      "expected": "APPLY",
+      "note": "HARD: small real Waterloo startup, no URL given",
+      "actual": "CAUTION",
+      "pass": false,
+      "response": {
+        "riskLevel": "MEDIUM",
+        "recommendation": "CAUTION",
+        "verdict": "Palitronica is an unverified company with no established public presence; unable to confirm legitimacy without additional research.",
+        "redFlags": [
+          "Company name 'Palitronica' does not match any recognized organization in technology or QA sectors",
+          "No immediately identifiable online presence or established reputation",
+          "Insufficient public information to verify company legitimacy"
+        ],
+        "greenFlags": [
+          "QA Engineer is a standard, legitimate job role offered by many companies",
+          "No obvious scam indicators in the company name itself",
+          "Role description does not contain common job scam markers"
+        ],
+        "verificationSteps": [
+          "Visit the company's official website and verify domain registration details via WHOIS lookup",
+          "Search for the company on LinkedIn, Glassdoor, and Indeed to confirm employee presence and reviews",
+          "Request detailed information about hiring process, salary range, and company background before proceeding"
+        ],
+        "companyType": "Unknown",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "Company is not recognized in public databases or industry directories; insufficient data to assess legitimacy. Treat as unverified startup or potentially regional entity requiring manual verification before application."
+      }
+    },
+    {
+      "id": "008",
+      "company": "Intellijoint Surgical",
+      "role": "Software Verification Engineer",
+      "url": "",
+      "expected": "APPLY",
+      "note": "HARD: small real medtech company, no URL given",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Intellijoint Surgical is a legitimate Canadian medical device company with verifiable operations in orthopedic surgical robotics.",
+        "redFlags": [],
+        "greenFlags": [
+          "Established medical device manufacturer in regulated healthcare sector with real product (Robotic-Assisted Surgery platform)",
+          "Software Verification Engineer is a legitimate technical role consistent with medical device development requiring FDA/regulatory compliance",
+          "Canadian company with identifiable headquarters and known venture backing in medical robotics space"
+        ],
+        "verificationSteps": [
+          "Verify company registration with Government of Canada corporate database",
+          "Check for FDA clearances or medical device approvals under company name",
+          "Confirm hiring through official company website and LinkedIn company page",
+          "Review company news, press releases, and funding announcements on legitimate business databases"
+        ],
+        "companyType": "Medical Device / Healthcare Technology",
+        "ownership": "Private",
+        "headcount": "51-200",
+        "annualRevenue": "$10M-$50M",
+        "founded": "2015",
+        "headquarters": "Waterloo, Canada",
+        "confidenceNote": "Legitimate but smaller company \u2014 data based on medical device sector knowledge; recommend independent verification through official channels"
+      }
+    },
+    {
+      "id": "009",
+      "company": "QuickHire Solutions",
+      "role": "Remote Data Entry",
+      "url": "",
+      "expected": "AVOID",
+      "note": "generic-name staffing scam pattern",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "QuickHire Solutions appears to be a generic staffing intermediary with hallmarks of a common job scam targeting remote workers.",
+        "redFlags": [
+          "Generic company name with no distinctive brand identity or market presence",
+          "Remote data entry roles are among the most commonly used in employment scams and advance-fee schemes",
+          "No verifiable company history, location, or leadership information readily available"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search for QuickHire Solutions on Better Business Bureau (BBB) and verify accreditation status",
+          "Check company registration with state business databases and corporate filing records",
+          "Request detailed company information including physical address, phone number, and employee references before any engagement"
+        ],
+        "companyType": "Staffing Agency",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No verifiable public information available \u2014 company name is generic and commonly associated with recruitment fraud schemes. High caution warranted."
+      }
+    },
+    {
+      "id": "010",
+      "company": "Global Remote Staffing LLC",
+      "role": "Package Reshipping Coordinator",
+      "url": "",
+      "expected": "AVOID",
+      "note": "reshipping scam role",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Package reshipping roles are a classic employment scam vehicle used to launder stolen goods and involve unwitting employees in fraud.",
+        "redFlags": [
+          "Package reshipping coordinator is a well-known scam job category used to receive stolen merchandise and forward to criminal networks",
+          "Generic company name 'Global Remote Staffing LLC' with no verifiable online presence suggests a shell organization",
+          "Role involves handling physical packages and redirecting them, a common money laundering and fraud scheme"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search for independent company reviews on Glassdoor, Indeed, and LinkedIn \u2014 legitimate staffing firms have employee feedback",
+          "Verify the company's legal registration through your state's Secretary of State business database",
+          "Contact the company's claimed headquarters directly using independently verified phone numbers to confirm the role exists"
+        ],
+        "companyType": "Staffing Agency",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognizable public presence. Package reshipping coordinator roles are statistically associated with employment fraud schemes targeting vulnerable job seekers. Recommend immediate avoidance regardless of legitimacy claims."
+      }
+    },
+    {
+      "id": "011",
+      "company": "Apex Digital Payments",
+      "role": "Payment Processing Agent",
+      "url": "",
+      "expected": "AVOID",
+      "note": "money-mule scam role",
+      "actual": "CAUTION",
+      "pass": false,
+      "response": {
+        "riskLevel": "MEDIUM",
+        "recommendation": "CAUTION",
+        "verdict": "Unverified company with generic branding and vague role description typical of payment processing scams; requires thorough verification before engagement.",
+        "redFlags": [
+          "Generic company name ('Apex Digital Payments') with no distinctive brand identity or market presence",
+          "Vague role title ('Payment Processing Agent') commonly used in work-from-home scams involving money handling",
+          "No distinguishing details provided suggesting potential shell company or fraudulent operation"
+        ],
+        "greenFlags": [
+          "Payment processing is a legitimate industry sector with real job opportunities",
+          "Role title follows standard naming conventions for financial services positions",
+          "No obvious URL red flags or typosquatting indicators mentioned"
+        ],
+        "verificationSteps": [
+          "Verify company registration with business registry (SEC EDGAR for US, Companies House for UK, etc.)",
+          "Check official company website domain registration age and SSL certificate legitimacy",
+          "Search for employee reviews on Glassdoor, Indeed, and LinkedIn to validate company authenticity and employment practices"
+        ],
+        "companyType": "Financial Services",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognizable public company data available; generic branding and lack of verifiable information prevent reliable assessment. Treat as unverified entity requiring independent validation before proceeding."
+      }
+    },
+    {
+      "id": "012",
+      "company": "TeleTask Pro",
+      "role": "Remote Chat Moderator",
+      "url": "https://teletaskpro.weebly.com",
+      "expected": "AVOID",
+      "note": "free-hosting domain",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Free Weebly domain hosting combined with generic job title and no verifiable company presence indicates likely job scam.",
+        "redFlags": [
+          "Uses free Weebly subdomain (weebly.com) instead of branded domain \u2014 common scam indicator",
+          "Generic role title 'Remote Chat Moderator' with vague responsibilities typical of work-from-home scams",
+          "No identifiable company information, team details, or legitimate business operations visible"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search for 'TeleTask Pro' on LinkedIn, Crunchbase, and Better Business Bureau \u2014 verify legitimate company presence",
+          "Contact the company directly via phone or official email domain (not web form) to confirm role authenticity",
+          "Check if job posting exists on established platforms (Indeed, LinkedIn Jobs, Glassdoor) with company verification"
+        ],
+        "companyType": "Unknown \u2014 appears to be Staffing/Job Placement if legitimate",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "Very low confidence \u2014 no established web presence, free hosting domain, and generic role characteristics are strong indicators of fraudulent operation rather than legitimate employer."
+      }
+    },
+    {
+      "id": "013",
+      "company": "Amazon",
+      "role": "Work From Home Assistant",
+      "url": "https://amazon-careers-jobs.net",
+      "expected": "AVOID",
+      "note": "HARD: real brand, typosquat domain",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "This is a phishing/scam domain impersonating Amazon; the URL uses a typosquat domain rather than the legitimate amazon.com or amazon.jobs.",
+        "redFlags": [
+          "Domain 'amazon-careers-jobs.net' is a typosquat/lookalike domain, not official Amazon property (legitimate: amazon.com or amazon.jobs)",
+          "Vague role title 'Work From Home Assistant' is typical of work-from-home scams; Amazon uses specific job titles",
+          "Generic 'WFH' roles with minimal description are common phishing bait used to harvest personal information and credentials"
+        ],
+        "greenFlags": [
+          "Amazon is a legitimate, well-known company",
+          "Remote work positions do exist at Amazon",
+          "Assistant roles are common in large organizations"
+        ],
+        "verificationSteps": [
+          "Visit amazon.com directly (do NOT click links from emails) and navigate to their official careers page",
+          "Search for the job posting on amazon.jobs using their official job board",
+          "Contact Amazon's HR department directly via verified phone number to confirm if this role and posting exist",
+          "Check the email domain of any communications\u2014legitimate Amazon uses @amazon.com addresses"
+        ],
+        "companyType": "Retail / E-commerce / Cloud Services",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$10B+",
+        "founded": "1994",
+        "headquarters": "Seattle, Washington, USA",
+        "confidenceNote": "Amazon is a well-known public company with reliable data; however, the provided URL is a fraudulent domain impersonating Amazon's legitimate career portal, making this specific posting a confirmed scam."
+      }
+    },
+    {
+      "id": "014",
+      "company": "Google",
+      "role": "Remote Recruiter Assistant",
+      "url": "https://google-hiring.work",
+      "expected": "AVOID",
+      "note": "HARD: real brand, fake domain",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Fraudulent impersonation of Google using a typosquatting domain; legitimate Google jobs are posted on google.com/careers, not third-party domains.",
+        "redFlags": [
+          "Domain 'google-hiring.work' is typosquatting and not Google's official domain (google.com)",
+          "Generic role title 'Remote Recruiter Assistant' with no specific team or product mentioned is common in recruitment scams",
+          "Scammers impersonate major tech companies to collect personal data, conduct fake interviews, or request upfront fees"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Visit google.com/careers directly and search for the role there",
+          "Verify email domain of recruiter matches @google.com, not third-party domain",
+          "Contact Google's official recruiting team through verified channels to confirm job posting exists"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$200B+",
+        "founded": "1998",
+        "headquarters": "Mountain View, USA",
+        "confidenceNote": "Google is a well-known public company with reliable data, but this posting is NOT from Google \u2014 the domain is a confirmed red flag indicating a scam operation impersonating Google."
+      }
+    },
+    {
+      "id": "015",
+      "company": "Shopify",
+      "role": "Customer Support",
+      "url": "https://shopify-careers.co",
+      "expected": "AVOID",
+      "note": "HARD: real brand, lookalike domain",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Fraudulent domain impersonating Shopify; legitimate Shopify careers are at shopify.com/careers, not shopify-careers.co.",
+        "redFlags": [
+          "Domain is shopify-careers.co (typosquatting variant) instead of official shopify.com",
+          "Generic 'Customer Support' role with no specific location, department, or job details typical of scam postings",
+          "Suspicious domain extension (.co) used to impersonate established company"
+        ],
+        "greenFlags": [
+          "Shopify is a legitimate, well-known public company",
+          "Customer Support is a real job category at Shopify",
+          "Generic role description could theoretically match real postings"
+        ],
+        "verificationSteps": [
+          "Visit the official Shopify website (shopify.com) and check their careers page directly",
+          "Compare the job posting URL and email domain against official Shopify communications",
+          "Search for Shopify's official hiring domains and verify the posting is listed there"
+        ],
+        "companyType": "Software / SaaS",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$1B-$10B",
+        "founded": "2006",
+        "headquarters": "Ottawa, Canada",
+        "confidenceNote": "Shopify is a well-known public company with reliable data; however, the provided URL is a confirmed phishing/impersonation domain, making this specific posting fraudulent despite the legitimate parent company."
+      }
+    },
+    {
+      "id": "016",
+      "company": "Canada Revenue Hiring Office",
+      "role": "Data Entry Clerk",
+      "url": "https://cra-jobs.info",
+      "expected": "AVOID",
+      "note": "government impersonation",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Impersonation scam mimicking Canada Revenue Agency with suspicious domain designed to deceive job seekers.",
+        "redFlags": [
+          "Domain 'cra-jobs.info' is not official CRA domain (impersonates legitimate government agency); real CRA uses canada.ca",
+          "Generic 'Data Entry Clerk' role with no specific department, salary, or job posting number typical of CRA postings",
+          "Company name 'Canada Revenue Hiring Office' is fabricated; actual entity is 'Canada Revenue Agency' with formal hiring procedures"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Visit official Canada Revenue Agency website (canada.ca/cra) and check their legitimate careers page",
+          "Verify any job posting directly through official CRA channels, never through third-party domains",
+          "Contact CRA directly via official phone number to confirm if position exists before applying or providing personal information"
+        ],
+        "companyType": "Job Scam (Impersonation)",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "High confidence this is a scam based on domain spoofing and impersonation of legitimate government agency; legitimate CRA does not recruit through '.info' domains or use generic hiring office names."
+      }
+    },
+    {
+      "id": "017",
+      "company": "Microsoft Recruitment Services",
+      "role": "Online Evaluator",
+      "url": "https://microsoft-jobs.xyz",
+      "expected": "AVOID",
+      "note": "HARD: brand impersonation, cheap TLD",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Fraudulent impersonation of Microsoft using a typosquatting domain; legitimate Microsoft jobs are posted on careers.microsoft.com only.",
+        "redFlags": [
+          "Domain 'microsoft-jobs.xyz' is typosquatting and not an official Microsoft domain",
+          "Microsoft does not operate recruitment under a separate branded service; official jobs are at careers.microsoft.com",
+          "'Online Evaluator' is a common gig-economy scam role used to harvest personal data or payment information"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Visit careers.microsoft.com directly to verify legitimate Microsoft job postings",
+          "Check Microsoft's official contact channels and confirm no 'Microsoft Recruitment Services' subsidiary exists",
+          "Verify the domain registrant and hosting provider of microsoft-jobs.xyz to confirm it is not Microsoft-owned"
+        ],
+        "companyType": "Suspected Fraudulent Recruitment Scam",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "High confidence this is a scam based on typosquatting domain, impersonation of well-known company, and suspicious role type; not a legitimate Microsoft entity."
+      }
+    },
+    {
+      "id": "018",
+      "company": "Crypto Yield Partners",
+      "role": "Remote Trading Assistant",
+      "url": "",
+      "expected": "AVOID",
+      "note": "crypto task scam pattern",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Crypto yield trading roles are frequently used in advance-fee and investment scams; this unverifiable company shows classic warning signs.",
+        "redFlags": [
+          "Crypto yield schemes are statistically among the highest-risk job scam categories, often requesting upfront deposits or promising unrealistic returns",
+          "Company name 'Crypto Yield Partners' and role 'Trading Assistant' match common job scam templates targeting financially naive applicants",
+          "No verifiable public presence, regulatory registration, or established business history makes legitimacy impossible to confirm"
+        ],
+        "greenFlags": [],
+        "verificationSteps": [
+          "Search SEC EDGAR database and financial regulator registries (FCA, FINRA) for Crypto Yield Partners registration and compliance status",
+          "Verify company legal registration via business databases and check for regulatory warnings or fraud complaints on FinCEN or cryptocurrency watchlists",
+          "Request verifiable office address, phone, and employee LinkedIn profiles; legitimate trading firms have public leadership and compliance officers"
+        ],
+        "companyType": "Financial Services / Cryptocurrency",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No recognized public data; company name and role structure match documented scam patterns in crypto trading schemes. Low confidence in legitimacy."
+      }
+    },
+    {
+      "id": "019",
+      "company": "Sun Life",
+      "role": "QA Automation Analyst",
+      "url": "https://sunlife.ca",
+      "expected": "APPLY",
+      "note": "major Canadian insurer",
+      "actual": "APPLY",
+      "pass": true,
+      "response": {
+        "riskLevel": "LOW",
+        "recommendation": "APPLY",
+        "verdict": "Sun Life is a well-established, publicly-traded multinational financial services company with a legitimate QA Automation Analyst role.",
+        "redFlags": [],
+        "greenFlags": [
+          "Sun Life is a major Fortune 500 financial services company with global operations",
+          "Official Canadian domain (.ca) matches known headquarters location",
+          "QA Automation Analyst is a standard, legitimate role in software/tech departments"
+        ],
+        "verificationSteps": [
+          "Verify the job posting on Sun Life's official careers page (sunlife.ca/careers or careers.sunlife.com)",
+          "Confirm recruiter email domain ends in @sunlife.com or official Sun Life domain",
+          "Cross-reference the job posting ID and details with LinkedIn Jobs or Glassdoor"
+        ],
+        "companyType": "Financial Services",
+        "ownership": "Public",
+        "headcount": "10000+",
+        "annualRevenue": "$10B+",
+        "founded": "1865",
+        "headquarters": "Toronto, Canada",
+        "confidenceNote": "Sun Life is a well-known, established multinational financial services corporation \u2014 data highly reliable."
+      }
+    },
+    {
+      "id": "020",
+      "company": "Evergreen Talent Group",
+      "role": "Mystery Shopper",
+      "url": "",
+      "expected": "AVOID",
+      "note": "mystery-shopper check scam pattern",
+      "actual": "AVOID",
+      "pass": true,
+      "response": {
+        "riskLevel": "HIGH",
+        "recommendation": "AVOID",
+        "verdict": "Mystery shopper roles are among the most common job scams; Evergreen Talent Group shows classic scam patterns with vague branding and a high-risk role category.",
+        "redFlags": [
+          "Mystery shopper positions are notoriously used in advance-fee scams and reimbursement fraud schemes",
+          "Generic company name 'Evergreen Talent Group' with no distinctive market positioning suggests potential front operation",
+          "Typical scam pattern: candidates hired to 'test' retailers, advance their own money, promised reimbursement that never comes"
+        ],
+        "greenFlags": [
+          "Staffing/talent agencies are a legitimate business category when operated honestly",
+          "Mystery shopping is a real service that legitimate companies use",
+          "Without seeing the actual job posting URL or application process, some legitimate mystery shopper networks do exist"
+        ],
+        "verificationSteps": [
+          "Search the company name + 'scam' or 'complaints' on independent review sites like Glassdoor, Indeed, and the BBB",
+          "Verify if they ask you to pay upfront fees, purchase gift cards, or advance your own money for 'testing'",
+          "Confirm their official website domain and contact a store they claim to partner with directly to verify the relationship"
+        ],
+        "companyType": "Staffing Agency / Gig Work Platform",
+        "ownership": "Unknown",
+        "headcount": "Unknown",
+        "annualRevenue": "Unknown",
+        "founded": "Unknown",
+        "headquarters": "Unknown",
+        "confidenceNote": "No publicly available information on this company; assessment based on high-risk role category (mystery shopper) which dominates job scam statistics. Mystery shopper scams are among the most prevalent employment frauds. Proceed with extreme caution."
+      }
+    }
+  ]
+}

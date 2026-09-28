@@ -1,0 +1,25 @@
+Run 20260928_141322 | prompt v2 | model claude-haiku-4-5-20251001 | 20 rows
+ID   EXPECTED  ACTUAL    RESULT  COMPANY
+----------------------------------------------------------------------
+001  APPLY     APPLY     PASS    Anthropic
+002  APPLY     APPLY     PASS    Shopify
+003  APPLY     APPLY     PASS    OpenText
+004  APPLY     APPLY     PASS    Dialpad
+005  APPLY     APPLY     PASS    Microsoft
+006  APPLY     APPLY     PASS    RBC
+007  APPLY     CAUTION   MISS    Palitronica
+008  APPLY     APPLY     PASS    Intellijoint Surgical
+009  AVOID     AVOID     PASS    QuickHire Solutions
+010  AVOID     AVOID     PASS    Global Remote Staffing LLC
+011  AVOID     CAUTION   MISS    Apex Digital Payments
+012  AVOID     AVOID     PASS    TeleTask Pro
+013  AVOID     AVOID     PASS    Amazon
+014  AVOID     AVOID     PASS    Google
+015  AVOID     AVOID     PASS    Shopify
+016  AVOID     AVOID     PASS    Canada Revenue Hiring Office
+017  AVOID     AVOID     PASS    Microsoft Recruitment Services
+018  AVOID     AVOID     PASS    Crypto Yield Partners
+019  APPLY     APPLY     PASS    Sun Life
+020  AVOID     AVOID     PASS    Evergreen Talent Group
+----------------------------------------------------------------------
+18/20 matched (90%), 0 errors
