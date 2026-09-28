@@ -1,0 +1,20 @@
+{"id": "001", "company": "Anthropic", "role": "SDET", "url": "https://anthropic.com", "expected": "APPLY", "note": "well-known, correct domain"}
+{"id": "002", "company": "Shopify", "role": "QA Engineer", "url": "https://shopify.com", "expected": "APPLY", "note": "well-known, correct domain"}
+{"id": "003", "company": "OpenText", "role": "Software Developer in Test", "url": "https://opentext.com", "expected": "APPLY", "note": "well-known Waterloo company"}
+{"id": "004", "company": "Dialpad", "role": "Sr. SDET", "url": "https://dialpad.com", "expected": "APPLY", "note": "QT applied here"}
+{"id": "005", "company": "Microsoft", "role": "Software Engineer", "url": "https://microsoft.com", "expected": "APPLY", "note": "well-known, correct domain"}
+{"id": "006", "company": "RBC", "role": "QA Analyst", "url": "https://rbc.com", "expected": "APPLY", "note": "major Canadian bank"}
+{"id": "007", "company": "Palitronica", "role": "QA Engineer", "url": "", "expected": "APPLY", "note": "HARD: small real Waterloo startup, no URL given"}
+{"id": "008", "company": "Intellijoint Surgical", "role": "Software Verification Engineer", "url": "", "expected": "APPLY", "note": "HARD: small real medtech company, no URL given"}
+{"id": "009", "company": "QuickHire Solutions", "role": "Remote Data Entry", "url": "", "expected": "AVOID", "note": "generic-name staffing scam pattern"}
+{"id": "010", "company": "Global Remote Staffing LLC", "role": "Package Reshipping Coordinator", "url": "", "expected": "AVOID", "note": "reshipping scam role"}
+{"id": "011", "company": "Apex Digital Payments", "role": "Payment Processing Agent", "url": "", "expected": "AVOID", "note": "money-mule scam role"}
+{"id": "012", "company": "TeleTask Pro", "role": "Remote Chat Moderator", "url": "https://teletaskpro.weebly.com", "expected": "AVOID", "note": "free-hosting domain"}
+{"id": "013", "company": "Amazon", "role": "Work From Home Assistant", "url": "https://amazon-careers-jobs.net", "expected": "AVOID", "note": "HARD: real brand, typosquat domain"}
+{"id": "014", "company": "Google", "role": "Remote Recruiter Assistant", "url": "https://google-hiring.work", "expected": "AVOID", "note": "HARD: real brand, fake domain"}
+{"id": "015", "company": "Shopify", "role": "Customer Support", "url": "https://shopify-careers.co", "expected": "AVOID", "note": "HARD: real brand, lookalike domain"}
+{"id": "016", "company": "Canada Revenue Hiring Office", "role": "Data Entry Clerk", "url": "https://cra-jobs.info", "expected": "AVOID", "note": "government impersonation"}
+{"id": "017", "company": "Microsoft Recruitment Services", "role": "Online Evaluator", "url": "https://microsoft-jobs.xyz", "expected": "AVOID", "note": "HARD: brand impersonation, cheap TLD"}
+{"id": "018", "company": "Crypto Yield Partners", "role": "Remote Trading Assistant", "url": "", "expected": "AVOID", "note": "crypto task scam pattern"}
+{"id": "019", "company": "Sun Life", "role": "QA Automation Analyst", "url": "https://sunlife.ca", "expected": "APPLY", "note": "major Canadian insurer"}
+{"id": "020", "company": "Evergreen Talent Group", "role": "Mystery Shopper", "url": "", "expected": "AVOID", "note": "mystery-shopper check scam pattern"}
