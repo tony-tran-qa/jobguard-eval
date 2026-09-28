@@ -1,4 +1,4 @@
-Batch 20260928_143651 | prompt v4 | claude-haiku-4-5-20251001 | holdout | 11 rows x 3 repeats
+Batch 20260928_143819 | prompt v5 | claude-haiku-4-5-20251001 | holdout | 11 rows x 3 repeats
 ID   EXPECTED R1        R2        R3        STABLE  COMPANY
 H01  APPLY    APPLY     APPLY     APPLY     yes     Kinaxis
 H02  APPLY    APPLY     APPLY     APPLY     yes     D2L
@@ -16,7 +16,7 @@ R1: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
 R2: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
 R3: recall 6/6 = 100% | FPR 0/5 = 0% | precision 100% | legit CAUTION 0
 Stability: 11/11 rows identical across repeats = 100%
-Hallucinated-lookup claims: 2/33 responses (quality check, not a pass criterion)
-Tokens: 26931 in / 11840 out | est. cost $0.086 (33 calls)
+Hallucinated-lookup claims: 1/33 responses (quality check, not a pass criterion)
+Tokens: 28449 in / 11914 out | est. cost $0.088 (33 calls)
 PASS CRITERIA MET: YES  (recall 100% + FPR 0% every repeat, stability >= 95%)
-Saved: results\batch_20260928_143651_v4_holdout.txt/.json
+Saved: results\batch_20260928_143819_v5_holdout.txt/.json
